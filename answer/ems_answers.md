@@ -8,23 +8,7 @@ The function of an ecosystem is to sustain life through several biogeochemical c
 
 - Source: [-19, 56, 57, 58]
 
-### What is ecological succession? Discuss primary 2
-
-ecological succession with a suitable example
-
-Ecological succession is the process by which an ecosystem changes over time as a result of natural processes. It involves the gradual replacement of one community of plants and animals by another community until a stable climax community is reached.
-
-Primary ecological succession occurs in an area that has not previously been occupied by a community of plants and animals. It begins with the colonization of barren land, such as a newly formed volcanic island or a glacial retreat. The process can take hundreds or even thousands of years.
-
-A suitable example of primary ecological succession is the colonization of a volcanic island. When a volcano erupts, it leaves behind a barren landscape with no soil, plants, or animals. Over time, seeds and spores carried by wind or water begin to colonize the area. These pioneer species, such as mosses and lichens, are able to grow in harsh conditions and help to break down the rock and form soil. As the soil becomes more developed, larger plants like ferns and grasses can begin to grow.
-
-As the plants continue to grow and die, they add nutrients to the soil, making it more fertile. This allows larger, more complex plants and animals, such as shrubs and insects, to move in. Over time, a diverse community of plants and animals
-
-- Source: [65, -19, 334, -3]
-
-### What is ecological succession? Discuss primary 2
-
-ecological succession with a suitable example
+### What is ecological succession? Discuss primary ecological succession with a suitable example
 
 Ecological succession is a natural process through which an ecosystem undergoes changes over a period of time. It is the process of gradual change in the species composition and structure of an ecosystem. It can be related to seasonal environmental changes or may take much longer periods of time.
 
@@ -45,9 +29,7 @@ Biodiversity refers to the variety of life on Earth, including the differences i
 - Aesthetic value: Biodiversity is beautiful and fascinating, and its presence enhances the aesthetic appeal
 - Source: [115, 113, 108, 109]
 
-### Define hot spot biodiversity. Discuss two hot spot biodiversity 2
-
-of India.
+### Define hot spot biodiversity. Discuss two hot spot biodiversity of India.
 
 Hot spot biodiversity refers to a particular ecological region that is home to a large number of rare, unique, and diverse species. These areas are often considered to be the richest and most distinctive natural areas in the world. In India, there are two main hot spots of biodiversity - the Western Ghats and the Northeastern hills.
 
@@ -97,9 +79,7 @@ There are several techniques used for the removal of gaseous pollutants from air
 
 - Source: [66, 72, 142, 193]
 
-### What is eutrophication? Discuss its major causes and 2
-
-consequences with a suitable diagram
+### What is eutrophication? Discuss its major causes and  consequences with a suitable diagram
 
 Eutrophication is the process of excessive nutrient enrichment in a body of water, leading to the overgrowth of algae and other aquatic plants. This results in a decrease in oxygen levels, which can lead to the death of fish and other aquatic species.
 
