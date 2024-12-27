@@ -13,6 +13,8 @@ from collections import defaultdict
 
 import json
 
+import json
+
 
 def save_answer(answers: dict, file_name: str):
     with open(f"./answer/{file_name}", "w", encoding="utf-8") as fp:
@@ -95,12 +97,13 @@ def main():
                 )
                 print(cb)
 
-            answers_dict = read_answers(file_name=file_name)
+            filename = "answers.json"
+            answers_dict = read_answers(file_name=filename)
             details = defaultdict()
             details["answer"] = response
             details["pages"] = [
                 int(doc.metadata.get("page"))
-                + (-36 if file_name == "DM_answers.json" else -23)
+                + (-36 if file_name == "DM_answers.json" else 1)
                 for doc in docs
             ]
             print(details)
@@ -112,9 +115,9 @@ def main():
             # print(answers_dict)
             save_answer(
                 answers_dict,
-                file_name="answers.json",
+                file_name=filename,
             )
-            convert_json_to_md(file_name="answers.json")
+            convert_json_to_md(file_name=filename)
 
 
 if __name__ == "__main__":
