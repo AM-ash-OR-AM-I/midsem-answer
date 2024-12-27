@@ -1,4 +1,5 @@
 import os
+import tempfile
 from dotenv import load_dotenv
 from langchain import PromptTemplate
 import streamlit as st
@@ -27,7 +28,7 @@ def read_answers(file_name: str) -> dict:
         return dict()
 
 
-def convert_json_to_md(file_name="DM_answers.json"):
+def convert_json_to_md(file_name):
     answers = read_answers(file_name)
     lines = []
     for question, answer_details in answers.items():
@@ -36,13 +37,12 @@ def convert_json_to_md(file_name="DM_answers.json"):
         lines.append(f"### {question}\n")
         lines.append(f"{answer}\n")
         lines.append(f" - Source: {pages}\n\n\n")
-    with open("./answer/answers.md", "w") as f:
+    with open(f"./answer/{file_name.replace('.json', '.md')}", "w") as f:
         f.writelines(lines)
 
 
-file_name = "DM_answers.json"
+file_name = "DWT_answers.json"
 answers_dict = read_answers(file_name=file_name)
-
 
 
 def main():
@@ -56,8 +56,11 @@ def main():
 
     # extract the text
     if pdf is not None:
+        with tempfile.NamedTemporaryFile(delete=False) as f:
+            f.write(pdf.read())
+            file_name = f.name
 
-        loader = PyPDFLoader("./Book_Datamining.pdf")
+        loader = PyPDFLoader(file_name)
         data = loader.load()
 
         # create embeddings
@@ -67,23 +70,29 @@ def main():
         # show user input
         user_question = st.text_area("Ask a question about your PDF:")
         prompt_template = """
-      Use the following pieces of context to answer the question at the end. Don't use "based on given context". Try to answer in brief and concise manner.
+    Follow the instructions below to answer the question:
+    - Use the following pieces of context inside triple quotes to answer the question
+    - Question will be outside the triple quotes
 
-      {context}
+    '''{context}'''
 
-      Question: {question}
-      Answer:
-      """
+    Question: {question}
+    Answer:
+    """
         prompt = PromptTemplate(
             template=prompt_template, input_variables=["context", "question"]
         )
         if user_question:
             docs = knowledge_base.similarity_search(user_question)
+            for doc in docs:
+                doc.page_content = doc.page_content.encode("utf-8", "replace").decode()
             print(docs)
             llm = OpenAI()
             chain = load_qa_chain(llm, chain_type="stuff", prompt=prompt)
             with get_openai_callback() as cb:
-                response = chain.run(input_documents=docs, question=user_question)
+                response = chain.run(
+                    input_documents=docs, question=user_question, max_tokens=4000
+                )
                 print(cb)
 
             answers_dict = read_answers(file_name=file_name)
@@ -91,7 +100,7 @@ def main():
             details["answer"] = response
             details["pages"] = [
                 int(doc.metadata.get("page"))
-                + (-36 if file_name == "DM_answers.json" else 1)
+                + (-36 if file_name == "DM_answers.json" else -23)
                 for doc in docs
             ]
             print(details)
@@ -101,8 +110,11 @@ def main():
             st.write(response)
             answers_dict[user_question] = details
             # print(answers_dict)
-            save_answer(answers_dict, file_name=file_name)
-            convert_json_to_md()
+            save_answer(
+                answers_dict,
+                file_name="answers.json",
+            )
+            convert_json_to_md(file_name="answers.json")
 
 
 if __name__ == "__main__":
