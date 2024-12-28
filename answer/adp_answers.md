@@ -737,6 +737,7 @@ public class UserRepository {
 
 ### (c)Write POJO Java program to convert tightly coupled code intoloosely coupled code to: Create a parent class A with a method display(). Create another class B that inherits class A and contains a method display. Create a main class to call the display method
 
+```java
 public class Main {
     public static void main(String[] args) {
         A objA = new B();
@@ -756,6 +757,7 @@ class B extends A {
         System.out.println("This is a method from class B");
     }
 }
+```
 
 - Source: [157, 98, 126, 316]
 
@@ -817,6 +819,7 @@ class B extends A {
 
 ### (c)Create a package of 4 classes named as address, Teacher, app,javaConfig. Address has fields as houseNo, city, postOffice, pin, state. Use setter method for the given fields and toString method to printstring representation of the object. Teacher class has name, id, mobileNo, and address fields. Use the setter method and toString method for this class. javaConfig class is java annotation-based configuration file which creates two address beans, and oneteacher bean and initialize the fields of both classes. In teacher class use any one address by using @Qualifier annotation. Call the teacher object in app class which consists of main method of Spring application
 
+```java
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -859,5 +862,5 @@ public class JavaConfig {
   // Using @Qualifier annotation to choose one of the two address beans
   // Uncomment one of the following lines to choose the desired address
   //teacher.setAddress(address1());
-  
+```
 - Source: [98, 97, 100, 157]

@@ -737,6 +737,7 @@ public class UserRepository {
 
 ### (c)Write POJO Java program to convert tightly coupled code intoloosely coupled code to: Create a parent class A with a method display(). Create another class B that inherits class A and contains a method display. Create a main class to call the display method
 
+```java
 public class Main {
     public static void main(String[] args) {
         A objA = new B();
@@ -756,6 +757,7 @@ class B extends A {
         System.out.println("This is a method from class B");
     }
 }
+```
 
 - Source: [157, 98, 126, 316]
 
