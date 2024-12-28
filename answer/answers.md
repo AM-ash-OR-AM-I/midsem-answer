@@ -243,7 +243,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
 
 3. application.properties file:
-```
+
+```properties
 # datasource configuration
 
 spring.datasource.url=jdbc:mysql://localhost:3306/employeesdb
