@@ -243,7 +243,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
 
 3. application.properties file:
-
+```
 # datasource configuration
 
 spring.datasource.url=jdbc:mysql://localhost:3306/employeesdb
@@ -255,6 +255,7 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
 
 The above configuration will connect the Spring Boot application to a MySQL database named "employeesdb" with the specified username and password. The "ddl-auto" property is set to "update" which will create
 
