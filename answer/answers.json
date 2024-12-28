@@ -295,5 +295,140 @@
       317,
       336
     ]
+  },
+  "1(a) What is Spring Boot? Which tools are required to build anapplication in Spring Boot.": {
+    "answer": "1(a) Spring Boot is a comprehensive way of developing production-ready applications focusing on single functionality. The tools required to build an application in Spring Boot include Java Development Kit 8, Apache Maven or Gradle, and Spring Tool Suite (STS).",
+    "pages": [
+      41,
+      15,
+      21,
+      9
+    ]
+  },
+  "(b) What is multiple inheritance by interface in JAVA. Explain itby using an example.": {
+    "answer": "    Multiple inheritance is a feature of object-oriented programming in which an object or class can inherit characteristics and features from more than one parent object or parent class. This allows the child object or class to have access to all the methods and properties of its parent classes.\n\n        In Java, multiple inheritance is achieved through interfaces. An interface is a collection of abstract methods and constants that can be implemented by a class. A class can implement multiple interfaces, thus allowing for multiple inheritance.\n\n        For example, in the given context, both the Car and Bike classes implement the Vehicle interface, which has a method for getting the number of wheels. This way, both the Car and Bike classes can access the getWheels() method and have their own implementations for it.\n\n        This is a powerful feature as it allows for code reuse and promotes modularity in programming. However, it should be used with caution as it can lead to complex code and conflicts if not implemented properly. ",
+    "pages": [
+      98,
+      141,
+      126,
+      100
+    ]
+  },
+  "(c) Execute small JAVA collection programs for the List & Queue.": {
+    "answer": "You can write a simple Java program to demonstrate the usage of List and Queue collections in the following way:\n\n    import java.util.List;\n    import java.util.ArrayList;\n    import java.util.Queue;\n    import java.util.LinkedList;\n\n    public class CollectionDemo {\n\n        public static void main(String[] args) {\n\n            // Example 1: List\n            List<String> names = new ArrayList<>();\n            names.add(\"John\");\n            names.add(\"Mary\");\n            names.add(\"Bob\");\n            names.add(\"Alice\");\n            names.add(\"Tom\");\n\n            System.out.println(\"Names: \" + names);\n            System.out.println(\"Size of names list: \" + names.size());\n            System.out.println(\"First name: \" + names.get(0));\n            System.out.println(\"Last name: \" + names.get(names.size() - 1));\n\n            // Example 2: Queue\n            Queue<String> tasks = new LinkedList<>();\n            tasks.add(\"Task 1\");\n            tasks.add(\"Task 2\");\n            tasks.add(\"Task 3\");\n            tasks.add(\"Task 4\");\n            tasks.add(\"Task 5\");\n\n            System.out.println(\"Tasks: \" + tasks);\n            System.out.println(\"Size of tasks queue: \" + tasks.size());\n            System.out.println(\"",
+    "pages": [
+      152,
+      314,
+      140,
+      56
+    ]
+  },
+  "2.(a) List out features of the 12-factor app. Explain about \"MinimalViable Product\" release of a software.": {
+    "answer": "(a) The features of the 12-factor app are:\n\n    1. Codebase: The codebase should be maintained in a version control system like Git or SVN.\n\n    2. Dependencies: All dependencies should be declared explicitly and isolated from other dependencies.\n\n    3. Config: Configuration should be stored in the environment.\n\n    4. Backing services: Backing services such as databases, caches, and queues should be attached to the application as resources.\n\n    5. Build, release, run: These stages should be strictly separated to ensure that the application can be built, released, and run independently.\n\n    6. Processes: Applications should be executed as one or more stateless processes.\n\n    7. Port binding: Services should be exported via port binding to allow for easy communication between applications.\n\n    8. Concurrency: Applications should be able to scale out via the process model.\n\n    9. Disposability: Applications should be easily disposed of to maximize robustness.\n\n    10. Dev/prod parity: Development, staging, and production environments should be as similar as possible.\n\n    11. Logs: Applications should produce logs as event streams.\n\n    12. Admin processes: Admin tasks should be run as one-off",
+    "pages": [
+      41,
+      24,
+      336,
+      38
+    ]
+  },
+  "(b) What is Spring Initializi? How Spring Initializ creates aMaven Spring Boot application skeleton?": {
+    "answer": "\nSpring Initializr is a tool provided by the Spring team to create a Maven Spring Boot application skeleton. It allows developers to quickly generate a project with all the necessary dependencies and configurations for a Spring Boot application. Spring Initializr creates this skeleton by generating a pom.xml file with all the required dependencies, such as Spring Boot starter, web, and test dependencies, and a basic project structure with a main application class annotated with @SpringBootApplication. The generated project can then be imported into an IDE and built using Maven or Gradle.",
+    "pages": [
+      42,
+      41,
+      64,
+      15
+    ]
+  },
+  "(c) What is meant by microservices? Discuss about theadvantageous features of Microservices, also mention some drawbacks of microservices.": {
+    "answer": "\nMicroservices refer to a software architecture that breaks down a large monolithic application into smaller, independent services that communicate with each other through APIs. Each service is responsible for a specific functionality and can be developed, deployed, and managed independently.\n\nSome advantageous features of microservices include:\n1. Single functionality and data repository: Each service has a specific purpose, which makes it easier to understand and maintain. Data is managed separately for each service, which helps in scalability and performance.\n\n2. Independent and isolated: Changes in one service do not affect the whole application. This enables faster development and deployment of new features.\n\n3. Communication via APIs: Services communicate with each other using Inter-Process Communication (IPC) calls through web services/APIs. This allows data to be accessed from different services, making it easier to share and integrate data.\n\n4. Independent testing: Each service can be tested independently, which saves time and effort compared to a monolithic application where the entire application needs to be tested even if only a small part has been changed.\n\n5. Isolated deployment: Each service can be deployed independently in an isolated environment. This allows for better resource management and reduces the risk of downtime.\n\nSome drawbacks of microservices include:\n1. Increased cost: Each microservice runs in an",
+    "pages": [
+      24,
+      25,
+      22,
+      153
+    ]
+  },
+  "3 (a) Write a simple Spring application, to understand the life of beans .": {
+    "answer": "\nThe following is a simple Spring application that demonstrates the life of beans:\n\n'''Preface\nSpring is an excellent framework for developing both web and cloud-native\napplications. This book on application development using Spring Boot\nsimplifies the process of writing boilerplate code for complex software. It\nallows developers to concentrate on the application's concept rather than on\nthe internal Java configuration.\n\nThis book will guide you on how to make the best use of the strength that\nSpring Boot provides. You'll gain an understanding of how Spring Boot\nconfiguration works in conjunction with application development, including\nauto-configuration and overriding default configurations. You will learn to\ndevelop scalable, dependable microservices to accelerate the development\nlifecycle of a cloud-based application. Each chapter will walk you through\nthe features of Spring Boot as a Software Development Framework, such as\nperforming Create, Read, Update, and Delete (CRUD) operations on a\ndatabase and securing web services with appropriate logging.\n\nBy the end of this book, you will develop, test, and deploy applications\nready for production and how to establish them as cloud-based applications.\nThe readers will also gain the expertise of writing unit and integration test\ncases. Over the 12 chapters in this book, you will learn",
+    "pages": [
+      9,
+      41,
+      64,
+      156
+    ]
+  },
+  "(b) Describe the purpose of Spring Boot starters. List and explain Spring Boot starters for web and actuator functionalities.": {
+    "answer": "\nThe purpose of Spring Boot starters is to provide a quick and easy way to add dependencies to a project and configure them automatically. This allows developers to focus on writing code instead of managing dependencies and configurations.\n\nSome commonly used Spring Boot starters include:\n\n1. spring-boot-starter-web - This starter includes all the necessary dependencies to create a web application, such as Tomcat, Spring MVC, and Spring Boot auto-configuration.\n\n2. spring-boot-starter-actuator - This starter enables the actuator endpoints, which provide useful information about the application, such as health, metrics, and tracing.\n\n3. spring-boot-starter-data-jpa - This starter includes all the dependencies necessary for using JPA (Java Persistence API) for database access, along with Spring Data, Hibernate, and Spring Boot auto-configuration.\n\n4. spring-boot-starter-test - This starter includes all the necessary testing dependencies, such as JUnit, Mockito, and Spring Test.\n\n5. spring-boot-starter-security - This starter enables security features, such as authentication and authorization, by including Spring Security and Spring Boot auto-configuration.\n\n6. spring-boot-starter-cache - This starter provides support for caching by including Spring Cache and Spring Boot auto-configuration.\n\n7. spring-boot-starter-aop",
+    "pages": [
+      65,
+      16,
+      22,
+      21
+    ]
+  },
+  "(c) Which annotations are included in @SpringBootApplication?Explain it by example.": {
+    "answer": "\nThe annotations included in @SpringBootApplication are @SpringBootConfiguration, @EnableAutoConfiguration, and @ComponentScan. These annotations are used to configure and bootstrap the Spring Boot application.\n\nFor example, if we have a class named \"MyApplication\" annotated with @SpringBootApplication, it is equivalent to annotating it with the following annotations:\n\n@SpringBootApplication\n@SpringBootConfiguration\n@EnableAutoConfiguration\n@ComponentScan\n\nThis reduces the amount of code needed to configure the application and allows for a more streamlined approach. ",
+    "pages": [
+      108,
+      64,
+      118,
+      60
+    ]
+  },
+  "4(a) Define a simple Spring Bean and explain how to configure iusing XML. For example, answer should show a class annotated as a bean and a corresponding XMI configuration file.": {
+    "answer": "\n    The following is an example of a simple Spring bean and its configuration using XML:\n\n    Step 1: Create a Java class annotated with @Component to mark it as a Spring bean.\n\n    @Component\n    public class Student {\n        private String name;\n        private int age;\n\n        //getters and setters\n    }\n\n    Step 2: Create an XML configuration file with the bean definition.\n\n    <beans xmlns=\"http://www.springframework.org/schema/beans\"\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n    xsi:schemaLocation=\"http://www.springframework.org/schema/beans\n    http://www.springframework.org/schema/beans/spring-beans.xsd\">\n\n        <bean id=\"student\" class=\"com.example.Student\">\n            <property name=\"name\" value=\"John Doe\"/>\n            <property name=\"age\" value=\"20\"/>\n        </bean>\n    </beans>\n\n    In the above configuration, the <bean> tag defines a bean with the id \"student\" and class \"com.example.Student\". The <property> tags are used to set the values for the name and age properties of the Student bean.\n\n    Step 3: Load the XML configuration file in the ApplicationContext.\n\n    ApplicationContext context = new",
+    "pages": [
+      118,
+      88,
+      16,
+      64
+    ]
+  },
+  "(b)Write a Java Program to demonstrate annotation-based Java configuration UserRepository class with a method saveUser.": {
+    "answer": "\npackage com.example.demo;\n\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Repository;\n\n@Repository\npublic class UserRepository {\n\n\t@Autowired\n\tprivate User user;\n\n\tpublic void saveUser() {\n\t\tSystem.out.println(\"Saving user: \" + user);\n\t}\n}\n",
+    "pages": [
+      129,
+      140,
+      124,
+      128
+    ]
+  },
+  "(c)Write POJO Java program to convert tightly coupled code intoloosely coupled code to: Create a parent class A with a method display(). Create another class B that inherits class A and contains a method display. Create a main class to call the display method.": {
+    "answer": "\npublic class Main {\n    public static void main(String[] args) {\n        A objA = new B();\n        objA.display();\n    }\n}\n\nclass A {\n    public void display() {\n        System.out.println(\"This is a method from class A\");\n    }\n}\n\nclass B extends A {\n    @Override\n    public void display() {\n        System.out.println(\"This is a method from class B\");\n    }\n}",
+    "pages": [
+      157,
+      98,
+      126,
+      316
+    ]
+  },
+  "5.(a) Demonstrate how to configure an application property inapplication.properties and read it using @Value. For example,answer should include setting a property in application.properties and reading it in a class.": {
+    "answer": "\n    application.properties:\n    my.application.property=test\n    \n    Class to read property using @Value:\n    @Component\n    public class MyClass {\n        @Value(\"${my.application.property}\")\n        private String myProperty;\n        \n        public void printProperty() {\n            System.out.println(myProperty);\n        }\n    }\n    \n    Output:\n    test",
+    "pages": [
+      62,
+      203,
+      85,
+      94
+    ]
+  },
+  "(b)Give an example demonstrating the use of the @PreDestroyand \"@PostConstruct annotations.": {
+    "answer": "\n    public void destroy() {\n        connection.close();\n    }\n\n    @PostConstruct\n    This annotation when used on top of methods notifies the container to invoke\n    the method whenever the bean instantiation is completed for any initialization\n    to bean properties. This method must be invoked before the class is put into\n    service. In earlier examples, we have seen the usage of @Primary  and\n    @Qualifier . Here, we used this annotation to get invoked after the bean is\n    created successfully with all of its dependencies injected. Here is the snippet:\n    package com.author.kickstart.service;\n    import javax.annotation.PostConstruct;\n    import org.springframework.beans.factory.annotation.Autowired;\n    import org.springframework.context.annotation.Configuration;\n    import com.author.kickstart.interfaces.Vehicle;\n    @Configuration\n    public class VehicleService {\n        @Autowired\n        Vehicle vehicle;\n        @PostConstruct\n        public void service() {\n            System.out.println(\"Wheels for vehicle:\" + vehicle.getWheels());\n        }\n    }\n\n    Conclusion\n    In this chapter, we discussed a lot of annotations which would be surely\n    useful when developing a Spring Boot application. There will be more sets\n    of annotations that will be explained in the upcoming chapters along with\n   ",
+    "pages": [
+      117,
+      97,
+      129,
+      96
+    ]
+  },
+  "(c)Create a package of 4 classes named as address, Teacher, app,javaConfig. Address has fields as houseNo, city, postOffice, pin, state. Use setter method for the given fields and toString method to printstring representation of the object. Teacher class has name, id, mobileNo, and address fields. Use the setter method and toString method for this class. javaConfig class is java annotation-based configuration file which creates two address beans, and oneteacher bean and initialize the fields of both classes. In teacher class use any one address by using @Qualifier annotation. Call the teacher object in app class which consists of main method of Spring application.": {
+    "answer": "\npackage com.example;\n\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.beans.factory.annotation.Qualifier;\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\n\n@Configuration\npublic class JavaConfig {\n\t\n\t@Bean\n\tpublic Address address1() {\n\t\tAddress address = new Address();\n\t\taddress.setHouseNo(\"123\");\n\t\taddress.setCity(\"New York\");\n\t\taddress.setPostOffice(\"NYC\");\n\t\taddress.setPin(12345);\n\t\taddress.setState(\"New York\");\n\t\treturn address;\n\t}\n\t\n\t@Bean\n\tpublic Address address2() {\n\t\tAddress address = new Address();\n\t\taddress.setHouseNo(\"456\");\n\t\taddress.setCity(\"Los Angeles\");\n\t\taddress.setPostOffice(\"LA\");\n\t\taddress.setPin(67890);\n\t\taddress.setState(\"California\");\n\t\treturn address;\n\t}\n\t\n\t@Bean\n\tpublic Teacher teacher() {\n\t\tTeacher teacher = new Teacher();\n\t\tteacher.setName(\"John Doe\");\n\t\tteacher.setId(1);\n\t\tteacher.setMobileNo(\"123-456-7890\");\n\t\t\n\t\t// Using @Qualifier annotation to choose one of the two address beans\n\t\t// Uncomment one of the following lines to choose the desired address\n\t\t//teacher.setAddress(address1());\n\t\t",
+    "pages": [
+      98,
+      97,
+      100,
+      157
+    ]
   }
 }

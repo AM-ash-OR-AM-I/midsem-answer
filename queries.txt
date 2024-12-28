@@ -1,33 +1,15 @@
-1.⁠ ⁠List four key features of the Spring Boot framework.
-2.⁠ ⁠Describe the purpose of Spring Boot starters. List and explain the Spring Boot starters for web and actuator functionalities.
-3.⁠ ⁠Define dependency injection. Provide a code snippet illustrating constructor Injection using @Autowired and @Component annotations in a Spring Boot application.
-4.⁠ ⁠Give an example demonstrating the use of the @PreDestroy' and '@PostConstruct annotations.
-5.⁠ ⁠Explain lazy initialization with a suitable example. List its benefits.
-6.⁠ ⁠Define Spring Boot. What tools are requiried to build an application in spring boot?
-7.⁠ ⁠Which annotations are included in @SpringBootApplication?
-8.⁠ ⁠How can we create our own auto-configuration class?
-9.⁠ ⁠What is @Autowired and explain with example?
-10.⁠ ⁠Write an example using @Bean.
-11.(a) What is a Spring Boot Starter?Give some examples.
-11.(b) How do You Create a Spring Boot Application?
-12.⁠ ⁠How do You Connect a Spring Boot Application to a database? Give example with an entity class and repository interface configuring the necessary setting in application.properties file.
-13.(a) What is Spring Boot DevTools?
-13.(b) What is Spring Boot Autoconfiguration?
-14.⁠ ⁠What is the difference between Spring and Spring Boot?
-15.⁠ ⁠What is dependency Injection in spring boot?Explain with proper example.
-16.⁠ ⁠Discuss bean life cycle in detail.
-17.⁠ ⁠What is micro service? Discuss in brief.
-18.⁠ ⁠What are the advantages of Spring Boot over Spring?
-19.⁠ ⁠Distinguish between constructor and setter based dependency.
-20.(a) Discuss the importance of loose coupling.
-(b) How are the @RestController and Controller Annotation different?
-21.⁠ ⁠What is Spring Boot? Which tools are required to build an application in Spring Boot?
-22.⁠ ⁠List out important features of Spring Boot. How to setup a Spring Boot Environment?
-23.⁠ ⁠List out features of the 12-factor app. Explain about "Minimal Viable Product" release of a software.
-24.⁠ ⁠What is Spring Initialize? How Spring Initialize creates a Maven Spring Boot application skeleton?
-25.⁠ ⁠What is meant by microservices? Discuss about the advantageous features of Microservices which breaks the monolithic way of developing software. State some drawbacks of using microservices.
-26.⁠ ⁠How does a spring application get started?
-27.⁠ ⁠Is it possible to change the port of the embedded Tomcat server in Spring Boot? If yes then how to change it.
-28.⁠ ⁠What is the use of the following annotations: @Autowired, @ComponentScan, @Bean
-29.⁠ ⁠What is the difference between @RequestMapping and @GetMapping?
-30.⁠ ⁠What is an IOC container?
+1(a) What is Spring Boot? Which tools are required to build anapplication in Spring Boot.
+(b) What is multiple inheritance by interface in JAVA. Explain itby using an example.
+(c) Execute small JAVA collection programs for the List & Queue.
+2.(a) List out features of the 12-factor app. Explain about "MinimalViable Product" release of a software.
+(b) What is Spring Initializi? How Spring Initializ creates aMaven Spring Boot application skeleton?
+(c) What is meant by microservices? Discuss about theadvantageous features of Microservices, also mention some drawbacks of microservices.
+3 (a) Write a simple Spring application, to understand the life of beans .
+(b) Describe the purpose of Spring Boot starters. List and explain Spring Boot starters for web and actuator functionalities.
+(c) Which annotations are included in @SpringBootApplication?Explain it by example.
+4(a) Define a simple Spring Bean and explain how to configure iusing XML. For example, answer should show a class annotated as a bean and a corresponding XMI configuration file.
+(b)Write a Java Program to demonstrate annotation-based Java configuration UserRepository class with a method saveUser.
+(c)Write POJO Java program to convert tightly coupled code intoloosely coupled code to: Create a parent class A with a method display(). Create another class B that inherits class A and contains a method display. Create a main class to call the display method.
+5.(a) Demonstrate how to configure an application property inapplication.properties and read it using @Value. For example,answer should include setting a property in application.properties and reading it in a class. 
+(b)Give an example demonstrating the use of the @PreDestroyand "@PostConstruct annotations.
+(c)Create a package of 4 classes named as address, Teacher, app,javaConfig. Address has fields as houseNo, city, postOffice, pin, state. Use setter method for the given fields and toString method to printstring representation of the object. Teacher class has name, id, mobileNo, and address fields. Use the setter method and toString method for this class. javaConfig class is java annotation-based configuration file which creates two address beans, and oneteacher bean and initialize the fields of both classes. In teacher class use any one address by using @Qualifier annotation. Call the teacher object in app class which consists of main method of Spring application.
