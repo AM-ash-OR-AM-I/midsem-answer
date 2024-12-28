@@ -479,9 +479,9 @@ Yes, it is possible to change the port of the embedded Tomcat server in Spring B
 
 ### 28.⁠ ⁠What is the use of the following annotations: @Autowired, @ComponentScan, @Bean
 
-    - @Autowired: This annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This enables dependency injection, which removes the dependency of a component from the source code, making it loosely coupled and allowing for easier unit testing.
-    - @ComponentScan: This annotation is used to specify the packages that should be scanned by Spring for components, services, and repositories. It allows for automatic detection of Spring-managed beans within the specified packages.
-    - @Bean: This annotation is used to declare a bean within the BeanFactory. It is usually placed on top of a method and can act as a replacement for the <bean> element in XML configuration. 
+- @Autowired: This annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This enables dependency injection, which removes the dependency of a component from the source code, making it loosely coupled and allowing for easier unit testing.
+- @ComponentScan: This annotation is used to specify the packages that should be scanned by Spring for components, services, and repositories. It allows for automatic detection of Spring-managed beans within the specified packages.
+- @Bean: This annotation is used to declare a bean within the BeanFactory. It is usually placed on top of a method and can act as a replacement for the <bean> element in XML configuration.
 
 - Source: [88, 118, 64, 17]
 
@@ -619,27 +619,55 @@ Some drawbacks of microservices include:
 
 The following is a simple Spring application that demonstrates the life of beans:
 
-'''Preface
-Spring is an excellent framework for developing both web and cloud-native
-applications. This book on application development using Spring Boot
-simplifies the process of writing boilerplate code for complex software. It
-allows developers to concentrate on the application's concept rather than on
-the internal Java configuration.
+```java
+package com.example.beanlifecycle;
 
-This book will guide you on how to make the best use of the strength that
-Spring Boot provides. You'll gain an understanding of how Spring Boot
-configuration works in conjunction with application development, including
-auto-configuration and overriding default configurations. You will learn to
-develop scalable, dependable microservices to accelerate the development
-lifecycle of a cloud-based application. Each chapter will walk you through
-the features of Spring Boot as a Software Development Framework, such as
-performing Create, Read, Update, and Delete (CRUD) operations on a
-database and securing web services with appropriate logging.
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.stereotype.Component;
 
-By the end of this book, you will develop, test, and deploy applications
-ready for production and how to establish them as cloud-based applications.
-The readers will also gain the expertise of writing unit and integration test
-cases. Over the 12 chapters in this book, you will learn
+@Component
+public class MyBean {
+
+    public MyBean() {
+        System.out.println("MyBean: Bean is being created (Constructor called).");
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("MyBean: Initialization (PostConstruct called).");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("MyBean: Cleanup (PreDestroy called).");
+    }
+}
+```
+
+```java
+package com.example.beanlifecycle;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BeanLifecycleApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Application: Starting Spring Application...");
+        var context = SpringApplication.run(BeanLifecycleApplication.class, args);
+        
+        // Accessing the bean to ensure it's created
+        MyBean myBean = context.getBean(MyBean.class);
+
+        System.out.println("Application: Bean is in use.");
+
+        // Close the context to trigger bean destruction
+        context.close();
+    }
+}
+```
 
 - Source: [9, 41, 64, 156]
 
@@ -738,23 +766,57 @@ public class UserRepository {
 ### (c)Write POJO Java program to convert tightly coupled code intoloosely coupled code to: Create a parent class A with a method display(). Create another class B that inherits class A and contains a method display. Create a main class to call the display method
 
 ```java
-public class Main {
-    public static void main(String[] args) {
-        A objA = new B();
-        objA.display();
-    }
-}
-
+// Parent class A
 class A {
     public void display() {
-        System.out.println("This is a method from class A");
+        System.out.println("Display method in class A");
     }
 }
 
+// Child class B
 class B extends A {
     @Override
     public void display() {
-        System.out.println("This is a method from class B");
+        System.out.println("Display method in class B");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        B b = new B(); // Tight coupling: Main is dependent on class B
+        b.display();   // Specific implementation of B is directly used
+    }
+}
+```
+
+```java
+// Parent class A
+class A {
+    public void display() {
+        System.out.println("Display method in class A");
+    }
+}
+
+// Child class B
+class B extends A {
+    @Override
+    public void display() {
+        System.out.println("Display method in class B");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Loosely coupled: Main interacts with A, not directly with B
+        A obj; // Reference of the parent class
+
+        obj = new A(); // Instance of class A
+        obj.display(); // Calls A's display method
+
+        obj = new B(); // Instance of class B
+        obj.display(); // Calls B's display method (polymorphism)
     }
 }
 ```
@@ -784,36 +846,55 @@ class B extends A {
 
 ### (b)Give an example demonstrating the use of the @PreDestroyand "@PostConstruct annotations
 
-    public void destroy() {
-        connection.close();
+ ```java
+package com.example.beanlifecycle;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyBean {
+
+    public MyBean() {
+        System.out.println("MyBean: Bean is being created (Constructor called).");
     }
 
     @PostConstruct
-    This annotation when used on top of methods notifies the container to invoke
-    the method whenever the bean instantiation is completed for any initialization
-    to bean properties. This method must be invoked before the class is put into
-    service. In earlier examples, we have seen the usage of @Primary  and
-    @Qualifier . Here, we used this annotation to get invoked after the bean is
-    created successfully with all of its dependencies injected. Here is the snippet:
-    package com.author.kickstart.service;
-    import javax.annotation.PostConstruct;
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.context.annotation.Configuration;
-    import com.author.kickstart.interfaces.Vehicle;
-    @Configuration
-    public class VehicleService {
-        @Autowired
-        Vehicle vehicle;
-        @PostConstruct
-        public void service() {
-            System.out.println("Wheels for vehicle:" + vehicle.getWheels());
-        }
+    public void init() {
+        System.out.println("MyBean: Initialization (PostConstruct called).");
     }
 
-    Conclusion
-    In this chapter, we discussed a lot of annotations which would be surely
-    useful when developing a Spring Boot application. There will be more sets
-    of annotations that will be explained in the upcoming chapters along with
+    @PreDestroy
+    public void destroy() {
+        System.out.println("MyBean: Cleanup (PreDestroy called).");
+    }
+}
+```
+
+```java
+package com.example.beanlifecycle;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BeanLifecycleApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Application: Starting Spring Application...");
+        var context = SpringApplication.run(BeanLifecycleApplication.class, args);
+        
+        // Accessing the bean to ensure it's created
+        MyBean myBean = context.getBean(MyBean.class);
+
+        System.out.println("Application: Bean is in use.");
+
+        // Close the context to trigger bean destruction
+        context.close();
+    }
+}
+```
 
 - Source: [117, 97, 129, 96]
 
@@ -863,4 +944,5 @@ public class JavaConfig {
   // Uncomment one of the following lines to choose the desired address
   //teacher.setAddress(address1());
 ```
+
 - Source: [98, 97, 100, 157]
