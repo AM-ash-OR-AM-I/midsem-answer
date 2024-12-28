@@ -65,6 +65,7 @@ import org.springframework
 
 The following example demonstrates the use of the @PreDestroy and @PostConstruct annotations:
 
+```java
 package com.example.demo;
 
 import javax.annotation.PostConstruct;
@@ -85,6 +86,7 @@ public class DatabaseConnection {
 		System.out.println("Closing database connection...");
 	}
 } 
+```
 
 In this example, we have a DatabaseConnection class with two methods annotated with @PostConstruct and @PreDestroy. The initializeConnection() method is annotated with @PostConstruct and will be executed after the bean is instantiated and its dependencies are injected. Similarly, the closeConnection() method is annotated with @PreDestroy and will be executed before the bean is destroyed.
 
@@ -390,26 +392,26 @@ To set up a Spring Boot environment, the following tools are required:
 
 ### 23.⁠ ⁠List out features of the 12-factor app. Explain about "Minimal Viable Product" release of a software.
 1. Breaking the monolithic way of developing software
-    2. Develops using microservices
-    3. Each service has a single functionality and data repository
-    4. Independent services to avoid impact on the whole application
-    5. Inter Process Communication (IPC) for communication between services
-    6. Independent testing for each service
-    7. Deploying each service independently in an isolated environment
-    8. Can share different external services
-    9. Can be deployed in different geographical locations
-    10. Strictly separate build and run stages
-    11. Stateless processes for execution
-    12. Export services via port binding
-    13. Ability to scale out via process model
-    14. Fast startup and graceful shutdown for robustness
-    15. Development, staging, and production environments should be similar.
-    16. Minimal Viable Product (MVP) release is a single release to showcase the product with basic functionality.
-    17. Helps to get feedback from users and make improvements.
-    18. Can be used to attract potential investors or customers.
-    19. MVP should be developed using agile methodology.
-    20. Should have a clear understanding of requirements and target audience.
-    21. Should be cost-effective and have a clear time-frame for
+2. Develops using microservices
+3. Each service has a single functionality and data repository
+4. Independent services to avoid impact on the whole application
+5. Inter Process Communication (IPC) for communication between services
+6. Independent testing for each service
+7. Deploying each service independently in an isolated environment
+8. Can share different external services
+9. Can be deployed in different geographical locations
+10. Strictly separate build and run stages
+11. Stateless processes for execution
+12. Export services via port binding
+13. Ability to scale out via process model
+14. Fast startup and graceful shutdown for robustness
+15. Development, staging, and production environments should be similar.
+16. Minimal Viable Product (MVP) release is a single release to showcase the product with basic functionality.
+17. Helps to get feedback from users and make improvements.
+18. Can be used to attract potential investors or customers.
+19. MVP should be developed using agile methodology.
+20. Should have a clear understanding of requirements and target audience.
+21. Should be cost-effective and have a clear time-frame for
  - Source: [41, 24, 38, 336]
 
 
@@ -462,11 +464,11 @@ Please note that if both `application.properties` and `application.yml` files ar
 
 ### 28.⁠ ⁠What is the use of the following annotations: @Autowired, @ComponentScan, @Bean
 
-    The @Autowired annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This allows for dependency injection, which removes the dependency of a component from the source code and makes it loosely coupled. It also enables unit testing.
+The @Autowired annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This allows for dependency injection, which removes the dependency of a component from the source code and makes it loosely coupled. It also enables unit testing.
 
-    The @ComponentScan annotation is used to specify the packages that should be scanned for Spring components, such as beans, controllers, and services. This allows for automatic detection and registration of these components in the ApplicationContext.
+The @ComponentScan annotation is used to specify the packages that should be scanned for Spring components, such as beans, controllers, and services. This allows for automatic detection and registration of these components in the ApplicationContext.
 
-    The @Bean annotation is used to declare a bean within the BeanFactory. This annotation can be used on top of a method and can act as a replacement for the <bean/> element in XML configuration. It supports attributes such as initMethod, destroyMethod, and autowireCandidate. By default, the bean name is the same as the method name unless specified otherwise. 
+The @Bean annotation is used to declare a bean within the BeanFactory. This annotation can be used on top of a method and can act as a replacement for the <bean/> element in XML configuration. It supports attributes such as initMethod, destroyMethod, and autowireCandidate. By default, the bean name is the same as the method name unless specified otherwise. 
  - Source: [88, 118, 64, 17]
 
 
@@ -478,7 +480,7 @@ Please note that if both `application.properties` and `application.yml` files ar
 
 ### 30.⁠ ⁠What is an IOC container?
 
-    An IOC container is a core feature of the Spring framework. It is responsible for managing the creation and lifecycle of objects (beans) in a Spring application. The container uses dependency injection to wire together different components and manage their dependencies, making it easier to develop and maintain applications.
+An IOC container is a core feature of the Spring framework. It is responsible for managing the creation and lifecycle of objects (beans) in a Spring application. The container uses dependency injection to wire together different components and manage their dependencies, making it easier to develop and maintain applications.
  - Source: [318, 324, 317, 336]
 
 

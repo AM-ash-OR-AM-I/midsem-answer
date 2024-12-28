@@ -1,6 +1,6 @@
 {
   "1.\u2060 \u2060List four key features of the Spring Boot framework.": {
-    "answer": "\n1. Auto-configuration\n2. Embedded servlet container\n3. Production-ready features\n4. Simplified development process",
+    "answer": "1. Simplified Configuration: Spring Boot eliminates boilerplate configurations required for Spring applications, allowing developers to focus on the application's concept rather than internal Java configuration.\n    2. Production-Ready Features: Spring Boot provides production-ready features such as health checks, metrics, and externalized configuration, making it easy to deploy and manage applications.\n    3. Auto-Configuration: Spring Boot automatically configures components based on classpath settings, reducing the need for manual configuration.\n    4. Embedded Servers: Spring Boot includes embedded servers such as Tomcat, Jetty, and Undertow, making it easy to run and test applications without needing to deploy to a standalone server.",
     "pages": [
       22,
       41,
@@ -9,7 +9,7 @@
     ]
   },
   "2.\u2060 \u2060Describe the purpose of Spring Boot starters. List and explain the Spring Boot starters for web and actuator functionalities.": {
-    "answer": "\nThe purpose of Spring Boot starters is to provide a convenient way to include and configure common dependencies in a Spring Boot application. These dependencies, also known as starter packs, can be easily added to the classpath and automatically configured through auto-configuration.\n\nSome of the Spring Boot starters for web and actuator functionalities include:\n\n1. spring-boot-starter-web: This starter pack includes all the necessary dependencies for developing a web application using Spring Boot. It includes features such as embedded Tomcat server, Spring MVC, and Spring Boot auto-configuration for web development.\n\n2. spring-boot-starter-actuator: This starter pack provides production-ready features for monitoring and managing the application. It includes endpoints for health checks, metrics, tracing, and more.\n\n3. spring-boot-starter-data-jpa: This starter pack is used for developing applications that require database access. It includes Spring Data JPA and Hibernate dependencies, along with auto-configuration for database connection and transaction management.\n\n4. spring-boot-starter-security: This starter pack provides security features for the application, such as authentication and authorization. It includes Spring Security and auto-configuration for securing endpoints and resources.\n\n5. spring-boot-starter-cache: This starter pack includes caching dependencies, such as Spring Cache and Redis, for",
+    "answer": "The purpose of Spring Boot starters is to provide a quick and easy way to add dependencies to a project, without having to manually configure them. These starter packs, when loaded into the classpath, automatically set up and configure various functionalities, making it easier for developers to focus on the core functionality of their application.\n\nSome examples of Spring Boot starter dependencies include:\n\n1. spring-boot-starter-web: This starter pack provides all the necessary dependencies for developing web applications, including Spring MVC, Tomcat, and Jackson, among others.\n\n2. spring-boot-starter-actuator: This starter pack includes dependencies for monitoring and managing the application, such as health checks, metrics, and logging.\n\n3. spring-boot-starter-security: This starter pack provides dependencies for securing the application by enabling features such as authentication and authorization.\n\n4. spring-boot-starter-data-jpa: This starter pack includes dependencies for using Spring Data JPA, which allows for easy database access and manipulation.\n\n5. spring-boot-starter-cache: This starter pack provides dependencies for using caching in the application, which can improve performance.\n\n6. spring-boot-starter-aop: This starter pack includes dependencies for using Aspect-Oriented Programming (AOP), a technique for managing cross-cutting concerns in the application.\n\n",
     "pages": [
       65,
       16,
@@ -18,7 +18,7 @@
     ]
   },
   "3.\u2060 \u2060Define dependency injection. Provide a code snippet illustrating constructor Injection using @Autowired and @Component annotations in a Spring Boot application.": {
-    "answer": "\nDependency injection is a technique used in software engineering to remove the hard-coded dependencies between objects. In this technique, the dependencies are injected into the objects at runtime, thus making the code loosely coupled and easier to maintain. In the Spring framework, dependency injection is achieved through the use of annotations like @Autowired, @Component, and @Configuration.\n\nBelow is an example of constructor injection using @Autowired and @Component annotations in a Spring Boot application:\n\n// CPU class with a constructor that has a dependency on Harddisk class\npackage com.author.kickstart.model;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Component;\n\n@Component // marks the class as a bean that can be managed by the Spring container\npublic class CPU {\n    private Harddisk harddisk;\n    \n    @Autowired // injects the dependency of Harddisk class\n    public CPU(Harddisk harddisk) {\n        this.harddisk = harddisk;\n    }\n}\n\n// Harddisk class\npackage com.author.kickstart.model;\nimport org.springframework.stereotype.Component;\n\n@Component // marks the class as a bean that can be managed by the Spring container\npublic class Harddisk {\n    // class definition\n}\n\n// Config class to define the beans\npackage com.author.kickstart.configuration;\nimport org.springframework",
+    "answer": "\nDependency injection is a design pattern used in object-oriented programming where the dependencies of a component are provided externally instead of being created within the component itself. This removes the dependency of a component from the source code, making the code loosely coupled and easier to maintain. In a Spring Boot application, dependency injection is achieved using the @Autowired annotation.\n\nConstructor Injection is a type of dependency injection where the dependencies are injected through a constructor. In a Spring Boot application, this can be achieved using @Autowired and @Component annotations as shown in the following code snippet:\n\n// CPU class\npackage com.author.kickstart.model;\n\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Component;\n\n@Component\npublic class CPU {\n\n    private Harddisk harddisk;\n\n    @Autowired\n    public CPU(Harddisk harddisk) {\n        this.harddisk = harddisk;\n    }\n\n    public String getInfo() {\n        return \"info\";\n    }\n}\n\n// AppConfig class\npackage com.author.kickstart.configuration;\n\nimport org.springframework.context.annotation.Configuration;\nimport com.author.kickstart.model.CPU;\n\n@Configuration\npublic class AppConfig {\n\n    @Autowired\n    CPU cpu;\n    \n    public void getInfo() {\n        System.out.println(cpu.getInfo());\n    }\n}",
     "pages": [
       88,
       64,
@@ -27,7 +27,7 @@
     ]
   },
   "4.\u2060 \u2060Give an example demonstrating the use of the @PreDestroy' and '@PostConstruct annotations.": {
-    "answer": "\nThe following example demonstrates the use of the @PreDestroy and @PostConstruct annotations:\n\npackage com.example.demo;\n\nimport javax.annotation.PostConstruct;\nimport javax.annotation.PreDestroy;\n\nimport org.springframework.stereotype.Component;\n\n@Component\npublic class DatabaseConnection {\n\n\t@PostConstruct\n\tpublic void initializeConnection() {\n\t\tSystem.out.println(\"Initializing database connection...\");\n\t}\n\t\n\t@PreDestroy\n\tpublic void closeConnection() {\n\t\tSystem.out.println(\"Closing database connection...\");\n\t}\n} \n\nIn this example, we have a DatabaseConnection class with two methods annotated with @PostConstruct and @PreDestroy. The initializeConnection() method is annotated with @PostConstruct and will be executed after the bean is instantiated and its dependencies are injected. Similarly, the closeConnection() method is annotated with @PreDestroy and will be executed before the bean is destroyed.\n\nNow, if we run this application and instantiate the DatabaseConnection bean, we will see the following output:\n\nInitializing database connection...\nClosing database connection...\n\nThis confirms that the @PostConstruct and @PreDestroy annotations were executed appropriately. ",
+    "answer": "\n    '''public class Car {\n\n    private String model;\n    private String color;\n\n    public Car(String model, String color) {\n        this.model = model;\n        this.color = color;\n    }\n\n    @PostConstruct\n    public void init() {\n        System.out.println(\"Creating a new car: \" + this.model + \" in \" + this.color);\n    }\n\n    @PreDestroy\n    public void destroy() {\n        System.out.println(\"Destroying a car: \" + this.model);\n    }\n}\n\n@Configuration\npublic class CarConfig {\n\n    @Bean\n    public Car car() {\n        return new Car(\"Toyota\", \"Blue\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(CarConfig.class);\n        context.registerShutdownHook();\n    }\n}\n\nOutput:\nCreating a new car: Toyota in Blue\nDestroying a car: Toyota\n\nIn this example, the Car class is annotated with @PostConstruct and @PreDestroy annotations. The init() method is annotated with @PostConstruct and is invoked after the Car bean is created and added to the application context. Similarly, the destroy() method is annotated with @PreDestroy and is invoked before the Car bean is",
     "pages": [
       117,
       97,
@@ -36,7 +36,7 @@
     ]
   },
   "5.\u2060 \u2060Explain lazy initialization with a suitable example. List its benefits.": {
-    "answer": "\nLazy initialization is a technique where an object is not created until it is actually needed. In other words, the object is not loaded into memory until it is used or referenced in the code. This is achieved by using the @Lazy annotation in Spring Boot applications.\n\nFor example, let's say we have a class called CPU that is annotated with @Component and has a method called getInfo(). We also have a class called AppConfig that has a @Lazy annotation on the CPU bean. In this scenario, the CPU bean will not be created during the application startup. Instead, it will be created only when it is explicitly autowired or referenced in the code.\n\nOne of the main benefits of lazy initialization is improved performance. By not creating objects until they are needed, the application uses less memory and has faster startup times. This can be especially useful in larger applications with many beans and dependencies.\n\nAnother benefit is increased flexibility. With lazy initialization, beans can be loaded and initialized on demand, which allows for more dynamic and efficient usage of resources. This can also help in managing complex dependency graphs and avoiding circular dependencies.\n\nOverall, lazy initialization can be a useful technique in managing memory and improving performance in Spring Boot applications. ",
+    "answer": "\n    Lazy initialization refers to the process of delaying the creation of objects until the point at which they are needed. In Java, this is achieved through the use of the @Lazy annotation. This annotation can be applied to classes, methods, or fields and allows for objects to be initialized only when they are explicitly called upon.\n\nOne example of lazy initialization can be seen in the use of the @Lazy annotation in conjunction with the @Autowired annotation. This allows for beans to be created and initialized only when they are needed, rather than at the startup of the application. For example, a CPU bean can be created and injected into another part of the application only when it is explicitly called for, rather than being created immediately at startup.\n\nSome benefits of lazy initialization include improved performance and reduced resource usage. By delaying the creation of objects until they are needed, the application can run more efficiently and use fewer resources, resulting in a faster and more streamlined experience for the user. Additionally, lazy initialization can also help to prevent potential memory leaks by only creating objects when they are required, rather than having them constantly taking up space in the application. ",
     "pages": [
       96,
       97,
@@ -45,7 +45,7 @@
     ]
   },
   "6.\u2060 \u2060Define Spring Boot. What tools are requiried to build an application in spring boot?": {
-    "answer": "1. Spring Boot is a comprehensive way of developing production-ready applications focusing on single functionality.\n2. Features of Spring Boot include auto-configuration, starter dependencies, and containerless deployment.\n3. The tools required to build an application in Spring Boot include JDK 8, Spring Tool Suite (STS), Spring Initializr, Apache Maven, and Gradle. ",
+    "answer": "1. Spring Boot is a comprehensive framework for developing production-ready applications that focuses on single functionality.\n    2. JDK 8, Spring Tool Suite (STS), Spring Initializr, Apache Maven, Gradle are the tools required to build an application in Spring Boot. ",
     "pages": [
       41,
       9,
@@ -54,7 +54,7 @@
     ]
   },
   "7.\u2060 \u2060Which annotations are included in @SpringBootApplication?": {
-    "answer": "@ComponentScan, @Configuration, @EnableAutoConfiguration\n",
+    "answer": "The annotations included in @SpringBootApplication are:\n    - @Component\n    - @Configuration\n    - @EnableAutoConfiguration\n    - @ComponentScan",
     "pages": [
       118,
       108,
@@ -63,7 +63,7 @@
     ]
   },
   "8.\u2060 \u2060How can we create our own auto-configuration class?": {
-    "answer": "\nWe can create our own auto-configuration class by creating a class annotated with the @Configuration annotation and defining a bean method annotated with @ConditionalOnMissingBean. This will ensure that the bean is only created if it does not already exist in the ApplicationContext. We can also use other conditional annotations such as @ConditionalOnClass, @ConditionalOnProperty, or @ConditionalOnBean to further customize the auto-configuration. ",
+    "answer": "\nWe can create our own auto-configuration classes by annotating them with the @Configuration annotation and ensuring that they are in the application's classpath. These classes can contain methods annotated with @Bean that will be automatically configured by Spring. Additionally, we can use the @EnableAutoConfiguration annotation to enable auto-configuration for our custom class.",
     "pages": [
       85,
       81,
@@ -72,7 +72,7 @@
     ]
   },
   "9.\u2060 \u2060What is @Autowired and explain with example?": {
-    "answer": "\n@Autowired is an annotation that is used to mark a constructor, field, or setter method to get autowired by Spring DI. Dependency Injection is a technique that removes the dependency of a component from the source code so that our source code is loosely coupled with the component. This also makes unit testing possible. The Spring framework provides two ways of dependency injection \u2013 constructor and setter method.\n\nAn example of @Autowired is shown in the code snippet below:\n\npackage com.author.kickstart.model;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Component;\n\n@Component\npublic class CPU {\n\n  @Autowired\n  private Harddisk harddisk;\n  \n  // constructor\n  public CPU() {\n  \n  }\n  \n  // setter method\n  public void setHarddisk(Harddisk harddisk) {\n    this.harddisk = harddisk;\n  }\n  \n  // other methods\n  // ...\n  \n}\n\nIn the above example, the Harddisk object is automatically injected into the CPU class using the @Autowired annotation. This allows the CPU class to access the Harddisk object without explicitly creating it, making the code more flexible and maintainable. ",
+    "answer": "\n    @Autowired is an annotation used in the Spring framework to mark a constructor, field, or setter method to get autowired by Spring DI. This dependency injection technique removes the dependency of a component from the source code, making it loosely coupled and allowing for easier unit testing. \n    There are three types of autowiring in Spring: constructor, field, and setter method. \n    An example of autowiring a constructor is shown in the following code snippet: \n\n    package com.author.kickstart.model;\n    import org.springframework.beans.factory.annotation.Autowired;\n    import org.springframework.stereotype.Component;\n    @Component\n    public class CPU {\n        private Harddisk harddisk;\n        @Autowired\n        public CPU(Harddisk harddisk) {\n            this.harddisk = harddisk;\n        }\n    }\n\n    In the above example, the Harddisk dependency is autowired through the constructor, making it available for use in the CPU class. This is done by annotating the constructor with @Autowired. \n    Autowiring a field is shown in the following code snippet: \n\n    package com.author.kickstart.model;\n    import org.springframework.beans.factory.annotation.Autowired;\n    import org.springframework.stereotype.Component;\n    @Component\n    public class CPU {\n       ",
     "pages": [
       88,
       96,
@@ -81,7 +81,7 @@
     ]
   },
   "10.\u2060 \u2060Write an example using @Bean.": {
-    "answer": "\npackage com.author.kickstart.configuration;\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\nimport com.author.kickstart.model.CPU;\n@Configuration\npublic class Config {\n    @Bean(\u201ccpu\u201d)\n    public CPU createCpu() {\n        return new CPU(\u201ci5\u201d, 7);\n    }\n}",
+    "answer": "\n    @Bean\n    public CPU createCpu() {\n        return new CPU(\"i5\", 7);\n    }",
     "pages": [
       88,
       96,
@@ -90,7 +90,7 @@
     ]
   },
   "11.(a) What is a Spring Boot Starter?Give some examples.": {
-    "answer": "(a) A Spring Boot Starter is a dependency that simplifies the process of setting up and configuring a specific feature or functionality in a Spring Boot application. It includes all the necessary dependencies and configurations for that particular feature. Examples of Spring Boot Starters include \"spring-boot-starter-web\" for creating web applications, \"spring-boot-starter-data-jpa\" for working with databases, and \"spring-boot-starter-security\" for implementing security features.",
+    "answer": "\nA Spring Boot Starter is a dependency that provides a set of pre-configured dependencies and auto-configuration for a specific functionality in a Spring Boot application. Some examples of Spring Boot Starters are:\n- spring-boot-starter-web: for developing web applications\n- spring-boot-starter-data-jpa: for working with relational databases using Java Persistence API (JPA)\n- spring-boot-starter-security: for securing web services and applications\n- spring-boot-starter-test: for writing unit and integration tests in a Spring Boot application. ",
     "pages": [
       41,
       21,
@@ -99,7 +99,7 @@
     ]
   },
   "11.(b) How do You Create a Spring Boot Application?": {
-    "answer": "\nYou can create a Spring Boot application by using the Spring Initializr tool provided by the Spring team. This tool offers commonly used Spring Boot dependencies and allows you to configure them easily for auto-configuration.",
+    "answer": "\nYou can create a Spring Boot application by using the Spring Initializr tool provided by the Spring team. This tool offers the most commonly used dependencies for developing a Spring Boot application and generates a skeleton of your project. ",
     "pages": [
       41,
       15,
@@ -108,7 +108,7 @@
     ]
   },
   "12.\u2060 \u2060How do You Connect a Spring Boot Application to a database? Give example with an entity class and repository interface configuring the necessary setting in application.properties file.": {
-    "answer": "To connect a Spring Boot Applicaiton to a database, you can use Spring Data JPA and configure the necessary settings in the application.properties file. For example, if we have an entity class called \"User\" and a repository interface called \"UserRepository\", we can configure the database connection in the application.properties file as follows:\n\nspring.datasource.url=jdbc:mysql://localhost:3306/mydatabase\nspring.datasource.username=username\nspring.datasource.password=password\n\nIn the User entity class, we can specify the table name and column names with the @Table and @Column annotations. For example:\n\n@Entity\n@Table(name = \"users\")\npublic class User {\n\n  @Id\n  @GeneratedValue(strategy = GenerationType.AUTO)\n  private Long id;\n\n  @Column(name = \"username\")\n  private String username;\n\n  @Column(name = \"email\")\n  private String email;\n\n  //getters and setters\n}\n\nIn the UserRepository interface, we can define methods for interacting with the database using Spring Data JPA's query methods. For example:\n\n@Repository\npublic interface UserRepository extends JpaRepository<User, Long> {\n  User findByUsername(String username);\n  List<User> findByEmailContaining(String keyword);\n}\n\nThis way, we can connect our Spring Boot application to a database and perform CRUD operations on the",
+    "answer": "\nTo connect a Spring Boot application to a database, you can use Spring Data JPA. Here's an example with an entity class and repository interface configuring the necessary settings in the application.properties file:\n\n1. Entity class: Employee.java\n\n@Entity\n@Table(name = \"employees\")\npublic class Employee {\n\n  @Id\n  @GeneratedValue(strategy = GenerationType.IDENTITY)\n  private Long id;\n\n  @Column(name = \"first_name\")\n  private String firstName;\n\n  @Column(name = \"last_name\")\n  private String lastName;\n\n  @Column(name = \"email\")\n  private String email;\n\n  // getters and setters\n}\n\n2. Repository interface: EmployeeRepository.java\n\n@Repository\npublic interface EmployeeRepository extends JpaRepository<Employee, Long> {\n\n}\n\n3. application.properties file:\n\n# datasource configuration\nspring.datasource.url=jdbc:mysql://localhost:3306/employeesdb\nspring.datasource.username=root\nspring.datasource.password=your_password\nspring.datasource.driver-class-name=com.mysql.jdbc.Driver\n\n# JPA configuration\nspring.jpa.hibernate.ddl-auto=update\nspring.jpa.show-sql=true\n\nThe above configuration will connect the Spring Boot application to a MySQL database named \"employeesdb\" with the specified username and password. The \"ddl-auto\" property is set to \"update\" which will create",
     "pages": [
       152,
       119,
@@ -117,7 +117,7 @@
     ]
   },
   "13.(a) What is Spring Boot DevTools?": {
-    "answer": "Spring Boot DevTools is a set of tools that improves the development experience of Spring Boot applications. It includes features such as automatic application restart, live reload of static resources, and remote debugging.",
+    "answer": "\nSpring Boot DevTools is a Spring Boot feature that allows for automatic restarting of an application when files or classes are modified. It also provides a live reload option for templates and static content.",
     "pages": [
       41,
       21,
@@ -126,7 +126,7 @@
     ]
   },
   "13.(b) What is Spring Boot Autoconfiguration?": {
-    "answer": "\nSpring Boot autoconfiguration is a feature provided by the Spring Boot framework that automatically configures a Spring application based on the dependencies included in the classpath. This makes development easier for developers by creating and managing beans explicitly and using them in the application. This feature uses annotations such as @EnableAutoConfiguration, @ConditionalOnClass, @ConditionalOnBean, and @ConditionalOnProperty to determine when and how to configure beans and classes. ",
+    "answer": "\nSpring Boot auto-configuration is a feature that automatically configures a Spring application based on the dependencies included in the classpath. This allows developers to easily create and use beans without having to explicitly configure them, making the development process more efficient. It is enabled by the @EnableAutoConfiguration annotation, which is present in the autoconfigure dependency under the package org.springframework.boot.autoconfigure. ",
     "pages": [
       81,
       16,
@@ -135,7 +135,7 @@
     ]
   },
   "14.\u2060 \u2060What is the difference between Spring and Spring Boot?": {
-    "answer": "\n    Spring is a Java-based framework that simplifies the process of writing boilerplate code for complex software. It requires developers to remember both configurations for the Spring model as well as the servlet container on which they are executing their application. On the other hand, Spring Boot is an open-source Java-based framework used to create standalone microservices with production-ready features. It eliminates the need to remember both configurations and allows developers to focus on the application's concept.",
+    "answer": "\n    Spring is a framework for developing both web and cloud-native applications, while Spring Boot is a framework built on top of Spring that eliminates boilerplate configurations required for Spring applications.",
     "pages": [
       41,
       9,
@@ -144,7 +144,7 @@
     ]
   },
   "15.\u2060 \u2060What is dependency Injection in spring boot?Explain with proper example.": {
-    "answer": "Dependency Injection (DI) is a design pattern in Spring Boot that allows developers to leverage the benefits of loose coupling. It is a process of providing an object with its dependencies instead of creating them within the object itself. This allows for easier maintenance, testing, and scalability of the code.\n\nOne example of dependency injection in Spring Boot is the use of the @Autowired annotation. This annotation allows developers to inject dependencies into a class without having to manually create them. For example, in a controller class, we can use @Autowired to inject a service class that handles the business logic for our application.\n\n@Controller\npublic class UserController {\n    @Autowired\n    private UserService userService;\n    // other controller methods\n}\n\nIn this example, Spring Boot will automatically create an instance of the UserService class and inject it into the UserController. This allows the controller to use the methods and functionality of the UserService without having to manually create an instance of it.\n\nThis dependency injection method allows for easier testing as well. In our unit tests, we can create a mock version of the UserService and inject it into our controller to test its functionality without having to access the actual database or external services.\n\nOverall, dependency injection in Spring Boot helps to improve modularity, maintainability, and testability of our code. It follows",
+    "answer": "\nDependency injection is a design pattern used in Spring Boot to provide objects that an application needs to function. It is a way to achieve loose coupling between objects, meaning that objects are not tightly dependent on one another. Instead, the dependencies are injected into the objects at runtime, making the code more modular and easier to maintain.\n\nOne example of dependency injection in Spring Boot is the use of the @Autowired annotation. This annotation allows for automatic dependency injection by scanning the classpath for components that are annotated with @Component, @Service, or @Repository annotations. These components are then instantiated and injected into the class where @Autowired is used.\n\nFor example, we can create a UserService class that requires an instance of a UserRepository class to perform database operations. We can annotate the UserRepository class with @Repository and the UserService class with @Service. Then, in the UserService class, we can use the @Autowired annotation to inject an instance of the UserRepository class.\n\n@Service\npublic class UserService {\n\n    @Autowired\n    private UserRepository userRepository;\n\n    // methods that use the userRepository\n}\n\n@Repository\npublic class UserRepository {\n\n    // database operations\n}\n\nThis way, we can access the methods of the UserRepository class without having to instantiate it manually. This not only makes the code more modular but also allows for",
     "pages": [
       85,
       43,
@@ -153,7 +153,7 @@
     ]
   },
   "16.\u2060 \u2060Discuss bean life cycle in detail.": {
-    "answer": "\nBean life cycle in Spring is the process of creating, initializing, using, and destroying a bean. It involves several steps that are performed in a specific order. These steps are defined by the Spring framework and cannot be modified by the user.\n\nThe following are the different stages of the bean life cycle in Spring:\n\n1. Instantiation: This is the first stage of the bean life cycle where the Spring container creates an instance of the bean using its constructor or a factory method.\n\n2. Populate properties: Once the bean is instantiated, the Spring container injects values into its properties and dependencies using dependency injection.\n\n3. BeanNameAware and BeanFactoryAware: The Spring container calls the BeanNameAware and BeanFactoryAware interfaces to provide the bean with its name and reference to the BeanFactory.\n\n4. Pre-initialization (PostConstruct): This stage allows the bean to perform any initialization tasks before it is ready for use.\n\n5. InitializingBean and init-method: The Spring container calls the InitializingBean interface's afterPropertiesSet() method or the init-method specified in the bean's configuration to perform any further initialization tasks.\n\n6. Ready for use: Once the bean has been initialized, it is now ready for use by the application.\n\n7. Pre-destroy (PreDestroy):",
+    "answer": "\n1. Creation: Bean life cycle begins with the creation of a bean instance. This is done by using the new keyword or by calling a factory method.\n2. Initialization: Once the bean instance is created, the container initializes it by calling its setter methods and injecting any dependencies.\n3. Using: The bean is now ready for use and can be called upon whenever needed.\n4. Destruction: When the container is shut down or when the application context is closed, the bean is destroyed. This can also be done manually by calling the destroy() method on the bean.\n5. Instantiation: During the instantiation phase, the container creates an instance of the bean. This can be done using the constructor or using a factory method.\n6. Post-Initialization: Once the bean is instantiated, any post-processing can be done. This includes implementing the BeanPostProcessor interface and overriding the postProcessBeforeInitialization and postProcessAfterInitialization methods.\n7. Destruction: This is the final phase of the bean life cycle. During this phase, the bean is removed from the container and any cleanup operations can be performed. This can be done by implementing the DisposableBean interface and overriding the destroy() method. Alternatively, a custom destroy method can be specified using the @Bean annotation.",
     "pages": [
       118,
       16,
@@ -162,7 +162,7 @@
     ]
   },
   "17.\u2060 \u2060What is micro service? Discuss in brief.": {
-    "answer": "\nA microservice is a software architecture design where an application is composed of small, independent services that work together to perform a specific business function. Each service is decoupled and can be developed, deployed, and maintained independently. This allows for faster development, testing, and deployment of new features, as well as easier scalability and better fault tolerance. Microservices are typically owned and maintained by small teams, making it easier to manage and update the application. Microservices also promote a more agile development process, where new features can be continuously developed, tested, and delivered.",
+    "answer": "\nMicroservice is an architectural design that creates scalable, loosely coupled, and testable applications which have a single function module with well-defined interfaces. Unlike traditional monolithic architecture, where all the code is contained within a single application, microservices break down the application into smaller, independent services that communicate with each other via APIs. Each microservice can be owned and maintained by a small team, making it easier to develop, test, and deploy new features. This design is adapted by many enterprises as it allows for faster and more agile development, with the ability to continuously deliver updates and enhancements. ",
     "pages": [
       24,
       22,
@@ -171,7 +171,7 @@
     ]
   },
   "18.\u2060 \u2060What are the advantages of Spring Boot over Spring?": {
-    "answer": "\n1. Faster development: Spring Boot reduces boilerplate code and simplifies the configuration process, allowing developers to focus on the application's concept rather than internal Java configurations. This leads to faster development and deployment.\n\n2. Loosely coupled dependencies: Spring Boot's auto-configuration feature manages class instantiations, reducing the need for developers to manually configure dependencies.\n\n3. Production-ready features: Spring Boot provides features such as actuator health endpoints, embedded container server support, and externalized configurations that make it easier to develop production-ready microservices.\n\n4. Simplified builds and configurations: Spring Boot offers starter packs for common dependencies, simplifying the build process and reducing the need for developers to write configurations.\n\n5. Live reload during development: Spring Boot automatically reloads the application during development, allowing for faster testing and debugging.\n\n6. External dependency management: Spring Boot manages external dependencies, such as database access and external API calls, making it easier for developers to focus on the core functionality of their application.\n\n7. Easy deployment: Spring Boot applications can be easily executed using the \"java -jar\" command, making it simple to deploy and run the application on any environment with a JVM.\n\n8. Small team ownership: Microservices created using Spring Boot can be easily owned and maintained",
+    "answer": "\n1. Faster way of developing applications by reducing the boilerplate configurations.\n2. Loosely coupled dependencies.\n3. Starter packs available as part of dependency for simplifying builds and configuration.\n4. Creating production-ready microservices with actuator health endpoints such as health, httptrace, mappings, metrics, info, configprops, env, and so on.\n5. Embedded container server support. By default, Tomcat is used.\n6. Auto-configuration for dependencies; once the dependency is loaded into the class path, Spring Boot manages the class instantiations, when needed.\n7. Externalized configurations with the help of .properties and .yml files and Spring Cloud Config.\n8. Live reload for the application during the development phase.\n9. Ability to exclude/change the dependency version before deployment.\n10. Simplifies the process of writing boilerplate code for complex software.\n11. Allows developers to focus on the application's concept rather than on the internal Java configuration.\n12. Can be executed by java \u2013jar <jar name> just like any other Java project that builds a jar file.\n13. Can also be started by running the mvn spring-boot:run command.\n14. Need less Spring configuration compared to traditional Spring applications.",
     "pages": [
       22,
       23,
@@ -180,7 +180,7 @@
     ]
   },
   "19.\u2060 \u2060Distinguish between constructor and setter based dependency.": {
-    "answer": "\n    Constructor based dependency injection is a type of dependency injection in which dependencies are passed into an object through its constructor. In this way, the constructor serves as a way to \"inject\" dependencies into the object. This approach is commonly used in languages like Java and C#.\n\n    Setter based dependency injection, on the other hand, is a type of dependency injection in which dependencies are set or \"injected\" into an object through setter methods. This approach is commonly used in languages like JavaScript and Python.\n\n    In summary, the main difference between the two approaches is the way in which dependencies are provided to an object - through the constructor or through setter methods.",
+    "answer": "\n- Constructor-based Dependency: This type of dependency is based on the constructor injection method, where the dependencies are provided through the constructor of a class. The dependencies are injected while creating the instance of the class, and the values cannot be changed later on. This method is mostly used for mandatory dependencies.\n\n- Setter-based Dependency: This type of dependency is based on the setter injection method, where the dependencies are provided through setter methods. The dependencies are injected after the instance of the class is created, and the values can be changed later on using the setter methods. This method is mostly used for optional dependencies. ",
     "pages": [
       89,
       85,
@@ -189,7 +189,7 @@
     ]
   },
   "20.(a) Discuss the importance of loose coupling.": {
-    "answer": "\nLoose coupling is a design principle in software development that refers to the degree of dependency between different components or modules of a system. It is important because it allows for a more flexible and maintainable system.\n\n1. Flexibility: Loose coupling allows for changes to be made to one component without affecting other components. This means that new features or changes can be implemented without having to make extensive modifications to the entire system.\n\n2. Modularity: By decoupling components, the system is divided into smaller, independent modules. This makes it easier to manage and maintain the codebase, as each module can be developed, tested and deployed separately.\n\n3. Scalability: Loose coupling allows for components to be added or removed without impacting the overall functionality of the system. This makes it easier to scale the system as needed, without having to make significant changes to the existing codebase.\n\n4. Reusability: By breaking down the system into smaller, independent components, these components can be reused in other applications. This saves time and effort in development, and also ensures consistency and avoids duplication of code.\n\n5. Testability: A loosely coupled system is easier to test, as the components can be tested independently without having to rely on other components. This makes it easier to identify and",
+    "answer": "\nLoose coupling is an architectural design pattern that promotes independence and flexibility between different components of a system. It is an important concept in software development as it allows for easier maintenance and scalability of the system.\n\nOne of the main benefits of loose coupling is that it reduces dependencies between components. This means that if one component needs to be changed or updated, it will not affect the other components of the system. This also makes it easier to replace or remove components without causing disruptions to the entire system.\n\nAnother advantage of loose coupling is that it promotes reusability of code. Components can be designed to be modular and independent, making it easier to reuse them in different parts of the system. This can save time and effort in development, as well as improve the overall quality of the code.\n\nLoose coupling also allows for easier integration of new components into the system. Since each component is independent, it can be integrated without affecting the existing components. This is especially beneficial in large and complex systems where new components are constantly being added.\n\nMoreover, loose coupling promotes better testing and debugging of the system. With components being independent, it is easier to isolate and test them individually, making it easier to identify and fix any issues.\n\nOverall, loose coupling leads to a more flexible and resilient system.",
     "pages": [
       24,
       250,
@@ -198,7 +198,7 @@
     ]
   },
   "(b) How are the @RestController and Controller Annotation different?": {
-    "answer": "\nThe @RestController annotation is a combination of the @Controller and @ResponseBody annotations, which is used to create REST APIs. It is used at the top of a class and can also be used at the method level to define specific mappings for different HTTP methods.\n\nOn the other hand, the @Controller annotation is used to mark a class as a controller, which is responsible for handling web requests. It can also be used in combination with @ResponseBody to return data in a specific format.\n\nIn summary, the main difference between the two is that @RestController is specifically used for creating REST APIs, while @Controller is used for handling web requests in a web application. ",
+    "answer": "\nThe @RestController and @Controller annotations serve different purposes in a Spring web application. \n\n1. Function:\n- The @RestController annotation is used to mark a class as the REST controller, which has a combination of @Controller and @ResponseBody features. This annotation is used at the top of a class.\n- The @Controller annotation is used to mark a class as a controller, which handles the user's request and returns a response. This annotation is also used at the top of a class.\n\n2. Return type:\n- The methods in a class annotated with @RestController are assumed to return the response body directly, without any view resolution. This means that the return type of a method with @RestController annotation can be any Java object, and it will be converted to JSON/XML response by default.\n- The methods in a class annotated with @Controller may return a String, a ModelAndView object, or any other type. These methods are responsible for returning the view to be rendered to the user.\n\n3. Annotation:\n- The @RestController annotation is a combination of @Controller and @ResponseBody annotations. This means that it is not necessary to use @ResponseBody annotation on methods with @RestController annotation, as it is implied.\n- The @Controller annotation needs to be used in conjunction with @ResponseBody",
     "pages": [
       163,
       105,
@@ -207,7 +207,7 @@
     ]
   },
   "21.\u2060 \u2060What is Spring Boot? Which tools are required to build an application in Spring Boot?": {
-    "answer": "1. Spring Boot is a framework developed on top of the Spring framework that eliminates boilerplate configurations required for Spring applications.\n    2. The tools required to build an application in Spring Boot are JDK 8, Spring Tool Suite (STS), Spring Initializr, and build tools like Maven and Gradle. ",
+    "answer": "1. Spring Boot is a comprehensive way of developing production-ready applications focusing on single functionality.\n    2. The tools required to build an application in Spring Boot are JDK 8, Spring Tool Suite (STS), Spring Initializr, Apache Maven, and Gradle.",
     "pages": [
       41,
       21,
@@ -216,7 +216,7 @@
     ]
   },
   "22.\u2060 \u2060List out important features of Spring Boot. How to setup a Spring Boot Environment?": {
-    "answer": "1. Simplifies boilerplate code\n2. Auto-configuration\n3. Standalone applications\n4. Production-ready applications\n5. Embedded server\n6. Easy dependency management\n7. Actuator for monitoring and managing applications\n8. Spring Boot CLI for creating and testing applications\n9. Easily customizable\n10. No need for XML configurations\n11. Easy integration with other Spring projects\n12. Simplified logging\n13. Developer productivity\n14. Spring Initializr for creating projects\n15. Easy testing\n16. Improved security features\n17. Easy deployment\n18. Cloud-native support\n19. Easy conversion of existing Spring projects to Spring Boot\n20. Community support and frequent updates.\n\nTo set up a Spring Boot environment, the following tools are required:\n1. Java Development Kit (JDK) 8 or higher\n2. Spring Tool Suite (STS) or any other IDE\n3. Spring Initializr\n4. Build tools such as Maven or Gradle\n5. Apache Maven or Gradle for build automation.",
+    "answer": "1. Auto-configuration: Spring Boot provides auto-configuration, which automatically configures the application based on the dependencies used.\n\n2. Opinionated: Spring Boot follows an opinionated approach, which means it provides default configurations, but developers can override them if needed.\n\n3. Embedded servers: Spring Boot comes with embedded servers, such as Tomcat, Jetty, and Undertow, which makes it easy to deploy and run applications without the need for external servers.\n\n4. Production-ready: Spring Boot is designed to be production-ready, which means it includes features like health checks, metrics, and externalized configurations, making it easier to deploy and manage applications in a production environment.\n\n5. Developer-friendly: Spring Boot is designed to be developer-friendly, which means it provides a simple and intuitive way to develop applications without the need for complex boilerplate code.\n\nTo set up a Spring Boot environment, you will need the following tools:\n\n1. Java Development Kit 8 (JDK 8)\n2. Build tool - Apache Maven or Gradle\n3. Integrated Development Environment (IDE) - Spring Tool Suite (STS)\n4. Spring Initializr - a web-based tool for generating Spring Boot projects\n5. Dependencies - common dependencies required for developing an application in Spring Boot.",
     "pages": [
       41,
       21,
@@ -225,7 +225,7 @@
     ]
   },
   "23.\u2060 \u2060List out features of the 12-factor app. Explain about \"Minimal Viable Product\" release of a software.": {
-    "answer": "1. Breaking the monolithic way of developing software\n    2. Develops using microservices\n    3. Each service has a single functionality and data repository\n    4. Independent services to avoid impact on the whole application\n    5. Inter Process Communication (IPC) for communication between services\n    6. Independent testing for each service\n    7. Deploying each service independently in an isolated environment\n    8. Can share different external services\n    9. Can be deployed in different geographical locations\n    10. Strictly separate build and run stages\n    11. Stateless processes for execution\n    12. Export services via port binding\n    13. Ability to scale out via process model\n    14. Fast startup and graceful shutdown for robustness\n    15. Development, staging, and production environments should be similar.\n    16. Minimal Viable Product (MVP) release is a single release to showcase the product with basic functionality.\n    17. Helps to get feedback from users and make improvements.\n    18. Can be used to attract potential investors or customers.\n    19. MVP should be developed using agile methodology.\n    20. Should have a clear understanding of requirements and target audience.\n    21. Should be cost-effective and have a clear time-frame for",
+    "answer": "\n1. Always use the latest versions of tools, Spring libraries, and other dependencies.\n2. Strictly separate build and run stages.\n3. Execute the app as one or more stateless processes.\n4. Export services via port binding.\n5. Scale out via the process model.\n6. Maximize robustness with fast startup and graceful shutdown.\n7. Keep developing, staging, and production as similar as possible.\n8. Continuous deployment and continuous delivery.\n9. Treat logs as event streams.\n10. Run the app as one or more services.\n11. Strictly separate build and run stages.\n12. Use declarative formats for setup automation.\n13. Have a clean contract with the operating system.\n14. Keep development, staging, and production as similar as possible.\n15. Minimize divergence between development and production.\n16. Keep the build, release, and run stages separate.\n17. Have a strict separation of configuration from code.\n18. Use build, release, run to have a consistent deployment environment.\n19. Use the 12-factor app to deploy software to a wide variety of environments.\n20. Be able to scale out via the process model.\n21. Maximize robustness with fast startup and graceful shutdown.\n22. Keep development, staging,",
     "pages": [
       41,
       24,
@@ -234,7 +234,7 @@
     ]
   },
   "24.\u2060 \u2060What is Spring Initialize? How Spring Initialize creates a Maven Spring Boot application skeleton?": {
-    "answer": "\nSpring Initializr is a tool provided by the Spring team that allows developers to create a Maven or Gradle Spring Boot application skeleton. This tool provides a common structure and initial dependencies for the application, which can then be customized and built upon by the developer. To create a Maven Spring Boot application skeleton, developers can select the desired dependencies and project settings in Spring Initializr, and then download and import the generated project into their development environment. ",
+    "answer": "\nSpring Initializr is a tool provided by the Spring team that allows developers to create a Maven Spring Boot application skeleton. It offers commonly used dependencies and configuration options, and generates a skeleton project that can be imported into an IDE. By selecting the desired dependencies and configurations, developers can quickly set up a Spring Boot project without having to manually configure all the necessary components.",
     "pages": [
       42,
       9,
@@ -243,7 +243,7 @@
     ]
   },
   "25.\u2060 \u2060What is meant by microservices? Discuss about the advantageous features of Microservices which breaks the monolithic way of developing software. State some drawbacks of using microservices.": {
-    "answer": "Microservices is an architectural design approach in which a single application is broken down into smaller, independent services that communicate with each other using web services/APIs. These services are self-contained and can be deployed and tested independently. This approach aims to create scalable, loosely coupled, and testable applications with well-defined interfaces. \n\nAdvantages of Microservices:\n1. Single Functionality and Data Repository: Each service in microservices has a single functionality and data repository, which makes it easier to understand and maintain. This also allows for better scalability as each service can be scaled independently.\n\n2. Independent Services: In a monolithic architecture, a change in one part of the application can impact the whole application. Microservices, on the other hand, are independent of each other, so a change in one service does not affect the others.\n\n3. Inter-Process Communication: Microservices communicate with each other using Inter-Process Communication (IPC) calls via web services/APIs. This allows for better data accessibility as one service can access data owned by another service.\n\n4. Independent Testing: Each service in microservices can be tested independently, unlike in a monolithic architecture where the whole application needs to be tested even if only a small part has changed. This saves time and resources.\n\n5",
+    "answer": "Microservices is an architectural design that creates scalable, loosely coupled, and testable applications which have a single function module with well-defined interfaces. In contrast to the traditional monolithic approach, microservices break down a large application into smaller, independent services. Each service is built around a specific business capability and can be developed, tested, and deployed independently without impacting the entire application. These individual services communicate with each other through web services or APIs, allowing them to seamlessly share data and functionality.\n\nSome of the advantageous features of using microservices over the monolithic approach include:\n\n1. Scalability: Microservices allow for scaling individual services based on their specific needs, rather than scaling the entire monolithic application. This results in more efficient resource allocation and cost savings.\n\n2. Loose Coupling: Each service in a microservices architecture is independent and can be developed and deployed separately. This allows for faster development and deployment cycles, and reduces the risk of system failures.\n\n3. Flexibility: Since each service is independent, developers can choose the most suitable technology stack for each service. This allows for greater flexibility and the ability to use cutting-edge technologies.\n\n4. Easier Maintenance: With microservices, any changes or updates can be made to a specific service without affecting the entire application. This",
     "pages": [
       24,
       25,
@@ -252,7 +252,7 @@
     ]
   },
   "26.\u2060 \u2060How does a spring application get started?": {
-    "answer": "\nThe spring.application.name is specified whenever you create a Spring Boot application. The Eureka service discovery then discovers the application based on the application name.",
+    "answer": "\n    When a Spring Boot application is created, it automatically configures and starts an embedded server, such as Tomcat or Jetty. This allows the application to be run without any additional setup or configuration. The application can be started by running the main method in the application class, or by using the Spring Boot Maven/Gradle plugin.",
     "pages": [
       203,
       85,
@@ -261,7 +261,7 @@
     ]
   },
   "27.\u2060 \u2060Is it possible to change the port of the embedded Tomcat server in Spring Boot? If yes then how to change it.": {
-    "answer": "\nYes, it is possible to change the port of the embedded Tomcat server in Spring Boot. This can be done by adding the following line in the `application.properties` file:\n\n```\nserver.port= <desired port number>\n```\n\nAlternatively, you can also change the port by adding the following line in the `application.yml` file:\n\n```\nserver:\n    port: <desired port number>\n```\n\nPlease note that if both `application.properties` and `application.yml` files are present, the preference will be given to `application.properties`.",
+    "answer": "Yes, it is possible to change the port of the embedded Tomcat server in Spring Boot by putting \"server.port=8081\" in application.properties file. This file is used to manage the configuration of the application. Another option is to use application.yml file where the configurations are specified with proper indentation. The preference is given to application.properties if both files are used.",
     "pages": [
       62,
       85,
@@ -270,7 +270,7 @@
     ]
   },
   "28.\u2060 \u2060What is the use of the following annotations: @Autowired, @ComponentScan, @Bean": {
-    "answer": "\n    The @Autowired annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This allows for dependency injection, which removes the dependency of a component from the source code and makes it loosely coupled. It also enables unit testing.\n\n    The @ComponentScan annotation is used to specify the packages that should be scanned for Spring components, such as beans, controllers, and services. This allows for automatic detection and registration of these components in the ApplicationContext.\n\n    The @Bean annotation is used to declare a bean within the BeanFactory. This annotation can be used on top of a method and can act as a replacement for the <bean/> element in XML configuration. It supports attributes such as initMethod, destroyMethod, and autowireCandidate. By default, the bean name is the same as the method name unless specified otherwise. ",
+    "answer": "\n    - @Autowired: This annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This enables dependency injection, which removes the dependency of a component from the source code, making it loosely coupled and allowing for easier unit testing.\n    - @ComponentScan: This annotation is used to specify the packages that should be scanned by Spring for components, services, and repositories. It allows for automatic detection of Spring-managed beans within the specified packages.\n    - @Bean: This annotation is used to declare a bean within the BeanFactory. It is usually placed on top of a method and can act as a replacement for the <bean> element in XML configuration. ",
     "pages": [
       88,
       118,
@@ -279,7 +279,7 @@
     ]
   },
   "29.\u2060 \u2060What is the difference between @RequestMapping and @GetMapping?": {
-    "answer": "\n@GetMapping is a shortcut for @RequestMapping(method = RequestMethod.GET), which means it is used specifically for GET requests. @RequestMapping is a more general annotation used for mapping HTTP requests to methods, and it can handle all types of HTTP methods. ",
+    "answer": "\n    The @RequestMapping annotation is used to map HTTP web requests onto methods in classes that are annotated with @RestController or @Controller. It can be used at both the class and method level and supports all HTTP methods. On the other hand, the @GetMapping annotation is a specialized version of @RequestMapping for HTTP GET requests. It is used only at the method level and is a shortcut for @RequestMapping(method = RequestMethod.GET).",
     "pages": [
       105,
       203,
@@ -288,7 +288,7 @@
     ]
   },
   "30.\u2060 \u2060What is an IOC container?": {
-    "answer": "\n    An IOC container is a core feature of the Spring framework. It is responsible for managing the creation and lifecycle of objects (beans) in a Spring application. The container uses dependency injection to wire together different components and manage their dependencies, making it easier to develop and maintain applications.",
+    "answer": "\n    An IOC container, or Inversion of Control container, is a design pattern used in software development to achieve loose coupling between components. It allows for the creation and management of objects and their dependencies, as well as the resolution of these dependencies at runtime. This enables more flexible and maintainable code.",
     "pages": [
       318,
       324,
