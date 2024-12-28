@@ -1,74 +1,299 @@
 {
-  "Define ecosystem, write the structure and function of ecosystem.": {
-    "answer": "\nAn ecosystem is a region with a specific and recognizable landscape form such as forest, grassland, desert, wetland or coastal area. It is a community of plants and animals that interact with each other and their non-living environment, such as soil, air, and water. Ecosystems are divided into terrestrial or land-based ecosystems, and aquatic ecosystems in water.\n\nThe structure of an ecosystem is based on its geographical and climatic features, such as hills, mountains, plains, rivers, lakes, and temperature and rainfall. This creates conditions that support a community of plants and animals that have evolved to live in these specific conditions. The living part of the ecosystem is referred to as its biotic component, while the non-living part is called its abiotic component.\n\nThe function of an ecosystem is to sustain life through several biogeochemical cycles and energy transfer mechanisms. These include the water cycle, carbon cycle, oxygen cycle, nitrogen cycle, and energy cycle. Plants, herbivores, and carnivores form food chains, which are all interconnected to form a \"web of life\" that powers the ecosystem. Ecosystems also provide a variety of products and services, and are essential for the survival and well-being of human civilization. However, human actions such",
+  "1.\u2060 \u2060List four key features of the Spring Boot framework.": {
+    "answer": "\n1. Auto-configuration\n2. Embedded servlet container\n3. Production-ready features\n4. Simplified development process",
     "pages": [
-      -19,
-      56,
-      57,
-      58
+      22,
+      41,
+      21,
+      9
     ]
   },
-  "What is ecological succession? Discuss primary 2\necological succession with a suitable example": {
-    "answer": "\nEcological succession is the process by which an ecosystem changes over time as a result of natural processes. It involves the gradual replacement of one community of plants and animals by another community until a stable climax community is reached.\n\nPrimary ecological succession occurs in an area that has not previously been occupied by a community of plants and animals. It begins with the colonization of barren land, such as a newly formed volcanic island or a glacial retreat. The process can take hundreds or even thousands of years.\n\nA suitable example of primary ecological succession is the colonization of a volcanic island. When a volcano erupts, it leaves behind a barren landscape with no soil, plants, or animals. Over time, seeds and spores carried by wind or water begin to colonize the area. These pioneer species, such as mosses and lichens, are able to grow in harsh conditions and help to break down the rock and form soil. As the soil becomes more developed, larger plants like ferns and grasses can begin to grow.\n\nAs the plants continue to grow and die, they add nutrients to the soil, making it more fertile. This allows larger, more complex plants and animals, such as shrubs and insects, to move in. Over time, a diverse community of plants and animals",
+  "2.\u2060 \u2060Describe the purpose of Spring Boot starters. List and explain the Spring Boot starters for web and actuator functionalities.": {
+    "answer": "\nThe purpose of Spring Boot starters is to provide a convenient way to include and configure common dependencies in a Spring Boot application. These dependencies, also known as starter packs, can be easily added to the classpath and automatically configured through auto-configuration.\n\nSome of the Spring Boot starters for web and actuator functionalities include:\n\n1. spring-boot-starter-web: This starter pack includes all the necessary dependencies for developing a web application using Spring Boot. It includes features such as embedded Tomcat server, Spring MVC, and Spring Boot auto-configuration for web development.\n\n2. spring-boot-starter-actuator: This starter pack provides production-ready features for monitoring and managing the application. It includes endpoints for health checks, metrics, tracing, and more.\n\n3. spring-boot-starter-data-jpa: This starter pack is used for developing applications that require database access. It includes Spring Data JPA and Hibernate dependencies, along with auto-configuration for database connection and transaction management.\n\n4. spring-boot-starter-security: This starter pack provides security features for the application, such as authentication and authorization. It includes Spring Security and auto-configuration for securing endpoints and resources.\n\n5. spring-boot-starter-cache: This starter pack includes caching dependencies, such as Spring Cache and Redis, for",
     "pages": [
       65,
-      -19,
-      334,
-      -3
-    ]
-  },
-  "What is ecological succession? Discuss primary 2\necological succession with a suitable example ": {
-    "answer": "\nEcological succession is a natural process through which an ecosystem undergoes changes over a period of time. It is the process of gradual change in the species composition and structure of an ecosystem. It can be related to seasonal environmental changes or may take much longer periods of time.\n\nPrimary ecological succession is the process of development of a new ecosystem in a previously uninhabited and barren area. This occurs in areas where there is no existing soil, such as on a newly formed island or after a volcanic eruption. The process starts with the colonization of pioneer species, which are the first organisms to inhabit the area. These pioneer species, such as mosses and lichens, are able to survive in harsh conditions and gradually prepare the area for other species to come in.\n\nA suitable example of primary ecological succession is the development of a forest on a volcanic island. After a volcanic eruption, the island is left barren with no soil. The first organisms to colonize the area are lichens and mosses, which can grow on bare rocks. These organisms are able to break down the rocks and eventually form a thin layer of soil. As the soil becomes more developed, other plants such as grasses and shrubs begin to grow. Over time, larger trees start to grow and eventually",
-    "pages": [
-      5,
-      89,
-      358,
+      16,
+      9,
       21
     ]
   },
-  "Define biodiversity and discuss different values of biodiversity.": {
-    "answer": "\nBiodiversity refers to the variety of life on Earth, including the differences in genes among individuals of the same species, the variety of species in a particular area, and the diversity of ecosystems. It is essential for the functioning of ecosystems and provides various benefits to human society. There are several values associated with biodiversity, including consumptive, productive, social, ethical, aesthetic, and option values.\n\n- Consumptive value: Biodiversity provides various goods and services that can be directly consumed by humans, such as food, medicines, and timber.\n- Productive value: Biodiversity is also a source of raw material for various industries, such as pharmaceuticals and agriculture, and plays a crucial role in the economic development of a nation.\n- Social value: Traditional societies have preserved biodiversity as a resource for their livelihood and cultural practices. Biodiversity also plays a vital role in maintaining the social and cultural fabric of a community.\n- Ethical value: All forms of life have the right to exist on Earth, and it is our duty to protect them. Biodiversity is essential for the well-being of all living beings, and it is our responsibility to preserve it.\n- Aesthetic value: Biodiversity is beautiful and fascinating, and its presence enhances the aesthetic appeal",
+  "3.\u2060 \u2060Define dependency injection. Provide a code snippet illustrating constructor Injection using @Autowired and @Component annotations in a Spring Boot application.": {
+    "answer": "\nDependency injection is a technique used in software engineering to remove the hard-coded dependencies between objects. In this technique, the dependencies are injected into the objects at runtime, thus making the code loosely coupled and easier to maintain. In the Spring framework, dependency injection is achieved through the use of annotations like @Autowired, @Component, and @Configuration.\n\nBelow is an example of constructor injection using @Autowired and @Component annotations in a Spring Boot application:\n\n// CPU class with a constructor that has a dependency on Harddisk class\npackage com.author.kickstart.model;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Component;\n\n@Component // marks the class as a bean that can be managed by the Spring container\npublic class CPU {\n    private Harddisk harddisk;\n    \n    @Autowired // injects the dependency of Harddisk class\n    public CPU(Harddisk harddisk) {\n        this.harddisk = harddisk;\n    }\n}\n\n// Harddisk class\npackage com.author.kickstart.model;\nimport org.springframework.stereotype.Component;\n\n@Component // marks the class as a bean that can be managed by the Spring container\npublic class Harddisk {\n    // class definition\n}\n\n// Config class to define the beans\npackage com.author.kickstart.configuration;\nimport org.springframework",
     "pages": [
-      115,
-      113,
-      108,
-      109
+      88,
+      64,
+      89,
+      96
     ]
   },
-  "Define hot spot biodiversity. Discuss two hot spot biodiversity 2\nof India.": {
-    "answer": "\nHot spot biodiversity refers to a particular ecological region that is home to a large number of rare, unique, and diverse species. These areas are often considered to be the richest and most distinctive natural areas in the world. In India, there are two main hot spots of biodiversity - the Western Ghats and the Northeastern hills.\n\nThe Western Ghats is a mountain range that runs parallel to the western coast of India. It is known for its high rainfall and rich vegetation, making it a hotspot for biodiversity. The Western Ghats is home to a large number of endemic plant and animal species, including 1,500 endemic plant species. It is also a habitat for a large number of amphibian and reptile species, especially snakes.\n\nThe Northeastern hills, which include the states of Assam, Meghalaya, Nagaland, Manipur, Mizoram, Arunachal Pradesh, and Tripura, are also considered to be a hot spot of biodiversity in India. This region is home to 1,500 endemic plant species and a large number of mammal species, including 63% of the land mammal genera found in India. The Northeastern hills are also a habitat for a large number of amphibian and reptile species.\n\nBoth the Western Gh",
+  "4.\u2060 \u2060Give an example demonstrating the use of the @PreDestroy' and '@PostConstruct annotations.": {
+    "answer": "\nThe following example demonstrates the use of the @PreDestroy and @PostConstruct annotations:\n\npackage com.example.demo;\n\nimport javax.annotation.PostConstruct;\nimport javax.annotation.PreDestroy;\n\nimport org.springframework.stereotype.Component;\n\n@Component\npublic class DatabaseConnection {\n\n\t@PostConstruct\n\tpublic void initializeConnection() {\n\t\tSystem.out.println(\"Initializing database connection...\");\n\t}\n\t\n\t@PreDestroy\n\tpublic void closeConnection() {\n\t\tSystem.out.println(\"Closing database connection...\");\n\t}\n} \n\nIn this example, we have a DatabaseConnection class with two methods annotated with @PostConstruct and @PreDestroy. The initializeConnection() method is annotated with @PostConstruct and will be executed after the bean is instantiated and its dependencies are injected. Similarly, the closeConnection() method is annotated with @PreDestroy and will be executed before the bean is destroyed.\n\nNow, if we run this application and instantiate the DatabaseConnection bean, we will see the following output:\n\nInitializing database connection...\nClosing database connection...\n\nThis confirms that the @PostConstruct and @PreDestroy annotations were executed appropriately. ",
     "pages": [
       117,
+      97,
+      129,
+      96
+    ]
+  },
+  "5.\u2060 \u2060Explain lazy initialization with a suitable example. List its benefits.": {
+    "answer": "\nLazy initialization is a technique where an object is not created until it is actually needed. In other words, the object is not loaded into memory until it is used or referenced in the code. This is achieved by using the @Lazy annotation in Spring Boot applications.\n\nFor example, let's say we have a class called CPU that is annotated with @Component and has a method called getInfo(). We also have a class called AppConfig that has a @Lazy annotation on the CPU bean. In this scenario, the CPU bean will not be created during the application startup. Instead, it will be created only when it is explicitly autowired or referenced in the code.\n\nOne of the main benefits of lazy initialization is improved performance. By not creating objects until they are needed, the application uses less memory and has faster startup times. This can be especially useful in larger applications with many beans and dependencies.\n\nAnother benefit is increased flexibility. With lazy initialization, beans can be loaded and initialized on demand, which allows for more dynamic and efficient usage of resources. This can also help in managing complex dependency graphs and avoiding circular dependencies.\n\nOverall, lazy initialization can be a useful technique in managing memory and improving performance in Spring Boot applications. ",
+    "pages": [
+      96,
+      97,
+      95,
+      147
+    ]
+  },
+  "6.\u2060 \u2060Define Spring Boot. What tools are requiried to build an application in spring boot?": {
+    "answer": "1. Spring Boot is a comprehensive way of developing production-ready applications focusing on single functionality.\n2. Features of Spring Boot include auto-configuration, starter dependencies, and containerless deployment.\n3. The tools required to build an application in Spring Boot include JDK 8, Spring Tool Suite (STS), Spring Initializr, Apache Maven, and Gradle. ",
+    "pages": [
+      41,
+      9,
+      21,
+      15
+    ]
+  },
+  "7.\u2060 \u2060Which annotations are included in @SpringBootApplication?": {
+    "answer": "@ComponentScan, @Configuration, @EnableAutoConfiguration\n",
+    "pages": [
       118,
-      116,
-      6
-    ]
-  },
-  "Differentiate between endemic and endanger species with suitable examples": {
-    "answer": "\nEndemic species are those that are found only in a specific region or area and are not found anywhere else in the world. For example, the Indian wild ass, the Nilgiri tahr, and the Himalayan wolf are endemic to specific regions of India and are not found in any other part of the world.\n\nEndangered species, on the other hand, are those that are at risk of becoming extinct due to various factors such as habitat loss, poaching, and human activities. These species are found in various parts of the world and are not restricted to a particular region. For example, the tiger, the elephant, and the rhinoceros are endangered species found in different parts of India as well as other countries. ",
-    "pages": [
-      121,
-      119,
-      127,
-      132
-    ]
-  },
-  "Differentiate in-situ and ex-situ biodiversity. Discuss various types of ex-situ biodiversity with example.": {
-    "answer": "\nIn-situ biodiversity refers to the preservation of biodiversity in its natural environment or habitat, such as national parks and wildlife sanctuaries. This strategy involves protecting and managing the entire ecosystem, including all the species within it.\n\nEx-situ biodiversity, on the other hand, involves conservation efforts that take place outside of the species' natural habitat. This strategy involves removing a species from its natural environment and placing it in a controlled environment, such as a botanical garden or zoo.\n\nThere are various types of ex-situ conservation, including:\n\n1. Breeding programs - These are designed to multiply endangered species in a controlled environment, such as a botanical garden or zoological park. For example, the Crocodile Breeding and Conservation Program in India has been successful in breeding and restocking thousands of crocodiles in natural water bodies.\n\n2. Gene banks - This involves preserving the germplasm of a species in a gene bank so it can be used for future breeding or research purposes. This is an expensive and risky method of conservation.\n\n3. Captive breeding - This involves breeding and rearing endangered species in captivity, with the aim of eventually reintroducing them into their natural habitat. For example, Project Tiger in India has been successful in increasing the tiger population in the country.\n\n",
-    "pages": [
-      135,
       108,
-      131,
-      109
+      64,
+      343
     ]
   },
-  "Write different techniques used for the removal of gaseous pollutants from air.": {
-    "answer": "There are several techniques used for the removal of gaseous pollutants from air, including:\n    1. Dilution: This technique involves dispersing the pollutants in a large volume of air, which dilutes them to acceptable levels.\n    2. Absorption: This method involves the use of a liquid or solid material to absorb the pollutants. The most commonly used absorbent is activated carbon.\n    3. Adsorption: Similar to absorption, this technique involves the use of a substance to attract and hold the pollutants. Common adsorbents include zeolites and activated alumina.\n    4. Condensation: This process involves cooling the polluted air, which causes the pollutants to condense into a liquid form and then be removed.\n    5. Oxidation: This method uses chemical reactions to convert the pollutants into less harmful substances. Ozone is commonly used for this purpose.\n    6. Filtration: This technique involves passing the polluted air through a filter, which traps the pollutants and allows clean air to pass through.\n    7. Catalytic Conversion: This process uses a catalyst to convert the pollutants into less harmful substances. This method is commonly used in catalytic converters in automobiles.\n    8. Biological Processes: Some pollutants can",
+  "8.\u2060 \u2060How can we create our own auto-configuration class?": {
+    "answer": "\nWe can create our own auto-configuration class by creating a class annotated with the @Configuration annotation and defining a bean method annotated with @ConditionalOnMissingBean. This will ensure that the bean is only created if it does not already exist in the ApplicationContext. We can also use other conditional annotations such as @ConditionalOnClass, @ConditionalOnProperty, or @ConditionalOnBean to further customize the auto-configuration. ",
     "pages": [
-      66,
-      72,
-      142,
-      193
+      85,
+      81,
+      84,
+      289
+    ]
+  },
+  "9.\u2060 \u2060What is @Autowired and explain with example?": {
+    "answer": "\n@Autowired is an annotation that is used to mark a constructor, field, or setter method to get autowired by Spring DI. Dependency Injection is a technique that removes the dependency of a component from the source code so that our source code is loosely coupled with the component. This also makes unit testing possible. The Spring framework provides two ways of dependency injection \u2013 constructor and setter method.\n\nAn example of @Autowired is shown in the code snippet below:\n\npackage com.author.kickstart.model;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Component;\n\n@Component\npublic class CPU {\n\n  @Autowired\n  private Harddisk harddisk;\n  \n  // constructor\n  public CPU() {\n  \n  }\n  \n  // setter method\n  public void setHarddisk(Harddisk harddisk) {\n    this.harddisk = harddisk;\n  }\n  \n  // other methods\n  // ...\n  \n}\n\nIn the above example, the Harddisk object is automatically injected into the CPU class using the @Autowired annotation. This allows the CPU class to access the Harddisk object without explicitly creating it, making the code more flexible and maintainable. ",
+    "pages": [
+      88,
+      96,
+      89,
+      17
+    ]
+  },
+  "10.\u2060 \u2060Write an example using @Bean.": {
+    "answer": "\npackage com.author.kickstart.configuration;\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\nimport com.author.kickstart.model.CPU;\n@Configuration\npublic class Config {\n    @Bean(\u201ccpu\u201d)\n    public CPU createCpu() {\n        return new CPU(\u201ci5\u201d, 7);\n    }\n}",
+    "pages": [
+      88,
+      96,
+      101,
+      102
+    ]
+  },
+  "11.(a) What is a Spring Boot Starter?Give some examples.": {
+    "answer": "(a) A Spring Boot Starter is a dependency that simplifies the process of setting up and configuring a specific feature or functionality in a Spring Boot application. It includes all the necessary dependencies and configurations for that particular feature. Examples of Spring Boot Starters include \"spring-boot-starter-web\" for creating web applications, \"spring-boot-starter-data-jpa\" for working with databases, and \"spring-boot-starter-security\" for implementing security features.",
+    "pages": [
+      41,
+      21,
+      22,
+      9
+    ]
+  },
+  "11.(b) How do You Create a Spring Boot Application?": {
+    "answer": "\nYou can create a Spring Boot application by using the Spring Initializr tool provided by the Spring team. This tool offers commonly used Spring Boot dependencies and allows you to configure them easily for auto-configuration.",
+    "pages": [
+      41,
+      15,
+      42,
+      9
+    ]
+  },
+  "12.\u2060 \u2060How do You Connect a Spring Boot Application to a database? Give example with an entity class and repository interface configuring the necessary setting in application.properties file.": {
+    "answer": "To connect a Spring Boot Applicaiton to a database, you can use Spring Data JPA and configure the necessary settings in the application.properties file. For example, if we have an entity class called \"User\" and a repository interface called \"UserRepository\", we can configure the database connection in the application.properties file as follows:\n\nspring.datasource.url=jdbc:mysql://localhost:3306/mydatabase\nspring.datasource.username=username\nspring.datasource.password=password\n\nIn the User entity class, we can specify the table name and column names with the @Table and @Column annotations. For example:\n\n@Entity\n@Table(name = \"users\")\npublic class User {\n\n  @Id\n  @GeneratedValue(strategy = GenerationType.AUTO)\n  private Long id;\n\n  @Column(name = \"username\")\n  private String username;\n\n  @Column(name = \"email\")\n  private String email;\n\n  //getters and setters\n}\n\nIn the UserRepository interface, we can define methods for interacting with the database using Spring Data JPA's query methods. For example:\n\n@Repository\npublic interface UserRepository extends JpaRepository<User, Long> {\n  User findByUsername(String username);\n  List<User> findByEmailContaining(String keyword);\n}\n\nThis way, we can connect our Spring Boot application to a database and perform CRUD operations on the",
+    "pages": [
+      152,
+      119,
+      203,
+      20
+    ]
+  },
+  "13.(a) What is Spring Boot DevTools?": {
+    "answer": "Spring Boot DevTools is a set of tools that improves the development experience of Spring Boot applications. It includes features such as automatic application restart, live reload of static resources, and remote debugging.",
+    "pages": [
+      41,
+      21,
+      9,
+      22
+    ]
+  },
+  "13.(b) What is Spring Boot Autoconfiguration?": {
+    "answer": "\nSpring Boot autoconfiguration is a feature provided by the Spring Boot framework that automatically configures a Spring application based on the dependencies included in the classpath. This makes development easier for developers by creating and managing beans explicitly and using them in the application. This feature uses annotations such as @EnableAutoConfiguration, @ConditionalOnClass, @ConditionalOnBean, and @ConditionalOnProperty to determine when and how to configure beans and classes. ",
+    "pages": [
+      81,
+      16,
+      65,
+      84
+    ]
+  },
+  "14.\u2060 \u2060What is the difference between Spring and Spring Boot?": {
+    "answer": "\n    Spring is a Java-based framework that simplifies the process of writing boilerplate code for complex software. It requires developers to remember both configurations for the Spring model as well as the servlet container on which they are executing their application. On the other hand, Spring Boot is an open-source Java-based framework used to create standalone microservices with production-ready features. It eliminates the need to remember both configurations and allows developers to focus on the application's concept.",
+    "pages": [
+      41,
+      9,
+      21,
+      22
+    ]
+  },
+  "15.\u2060 \u2060What is dependency Injection in spring boot?Explain with proper example.": {
+    "answer": "Dependency Injection (DI) is a design pattern in Spring Boot that allows developers to leverage the benefits of loose coupling. It is a process of providing an object with its dependencies instead of creating them within the object itself. This allows for easier maintenance, testing, and scalability of the code.\n\nOne example of dependency injection in Spring Boot is the use of the @Autowired annotation. This annotation allows developers to inject dependencies into a class without having to manually create them. For example, in a controller class, we can use @Autowired to inject a service class that handles the business logic for our application.\n\n@Controller\npublic class UserController {\n    @Autowired\n    private UserService userService;\n    // other controller methods\n}\n\nIn this example, Spring Boot will automatically create an instance of the UserService class and inject it into the UserController. This allows the controller to use the methods and functionality of the UserService without having to manually create an instance of it.\n\nThis dependency injection method allows for easier testing as well. In our unit tests, we can create a mock version of the UserService and inject it into our controller to test its functionality without having to access the actual database or external services.\n\nOverall, dependency injection in Spring Boot helps to improve modularity, maintainability, and testability of our code. It follows",
+    "pages": [
+      85,
+      43,
+      77,
+      73
+    ]
+  },
+  "16.\u2060 \u2060Discuss bean life cycle in detail.": {
+    "answer": "\nBean life cycle in Spring is the process of creating, initializing, using, and destroying a bean. It involves several steps that are performed in a specific order. These steps are defined by the Spring framework and cannot be modified by the user.\n\nThe following are the different stages of the bean life cycle in Spring:\n\n1. Instantiation: This is the first stage of the bean life cycle where the Spring container creates an instance of the bean using its constructor or a factory method.\n\n2. Populate properties: Once the bean is instantiated, the Spring container injects values into its properties and dependencies using dependency injection.\n\n3. BeanNameAware and BeanFactoryAware: The Spring container calls the BeanNameAware and BeanFactoryAware interfaces to provide the bean with its name and reference to the BeanFactory.\n\n4. Pre-initialization (PostConstruct): This stage allows the bean to perform any initialization tasks before it is ready for use.\n\n5. InitializingBean and init-method: The Spring container calls the InitializingBean interface's afterPropertiesSet() method or the init-method specified in the bean's configuration to perform any further initialization tasks.\n\n6. Ready for use: Once the bean has been initialized, it is now ready for use by the application.\n\n7. Pre-destroy (PreDestroy):",
+    "pages": [
+      118,
+      16,
+      20,
+      41
+    ]
+  },
+  "17.\u2060 \u2060What is micro service? Discuss in brief.": {
+    "answer": "\nA microservice is a software architecture design where an application is composed of small, independent services that work together to perform a specific business function. Each service is decoupled and can be developed, deployed, and maintained independently. This allows for faster development, testing, and deployment of new features, as well as easier scalability and better fault tolerance. Microservices are typically owned and maintained by small teams, making it easier to manage and update the application. Microservices also promote a more agile development process, where new features can be continuously developed, tested, and delivered.",
+    "pages": [
+      24,
+      22,
+      25,
+      153
+    ]
+  },
+  "18.\u2060 \u2060What are the advantages of Spring Boot over Spring?": {
+    "answer": "\n1. Faster development: Spring Boot reduces boilerplate code and simplifies the configuration process, allowing developers to focus on the application's concept rather than internal Java configurations. This leads to faster development and deployment.\n\n2. Loosely coupled dependencies: Spring Boot's auto-configuration feature manages class instantiations, reducing the need for developers to manually configure dependencies.\n\n3. Production-ready features: Spring Boot provides features such as actuator health endpoints, embedded container server support, and externalized configurations that make it easier to develop production-ready microservices.\n\n4. Simplified builds and configurations: Spring Boot offers starter packs for common dependencies, simplifying the build process and reducing the need for developers to write configurations.\n\n5. Live reload during development: Spring Boot automatically reloads the application during development, allowing for faster testing and debugging.\n\n6. External dependency management: Spring Boot manages external dependencies, such as database access and external API calls, making it easier for developers to focus on the core functionality of their application.\n\n7. Easy deployment: Spring Boot applications can be easily executed using the \"java -jar\" command, making it simple to deploy and run the application on any environment with a JVM.\n\n8. Small team ownership: Microservices created using Spring Boot can be easily owned and maintained",
+    "pages": [
+      22,
+      23,
+      9,
+      41
+    ]
+  },
+  "19.\u2060 \u2060Distinguish between constructor and setter based dependency.": {
+    "answer": "\n    Constructor based dependency injection is a type of dependency injection in which dependencies are passed into an object through its constructor. In this way, the constructor serves as a way to \"inject\" dependencies into the object. This approach is commonly used in languages like Java and C#.\n\n    Setter based dependency injection, on the other hand, is a type of dependency injection in which dependencies are set or \"injected\" into an object through setter methods. This approach is commonly used in languages like JavaScript and Python.\n\n    In summary, the main difference between the two approaches is the way in which dependencies are provided to an object - through the constructor or through setter methods.",
+    "pages": [
+      89,
+      85,
+      49,
+      43
+    ]
+  },
+  "20.(a) Discuss the importance of loose coupling.": {
+    "answer": "\nLoose coupling is a design principle in software development that refers to the degree of dependency between different components or modules of a system. It is important because it allows for a more flexible and maintainable system.\n\n1. Flexibility: Loose coupling allows for changes to be made to one component without affecting other components. This means that new features or changes can be implemented without having to make extensive modifications to the entire system.\n\n2. Modularity: By decoupling components, the system is divided into smaller, independent modules. This makes it easier to manage and maintain the codebase, as each module can be developed, tested and deployed separately.\n\n3. Scalability: Loose coupling allows for components to be added or removed without impacting the overall functionality of the system. This makes it easier to scale the system as needed, without having to make significant changes to the existing codebase.\n\n4. Reusability: By breaking down the system into smaller, independent components, these components can be reused in other applications. This saves time and effort in development, and also ensures consistency and avoids duplication of code.\n\n5. Testability: A loosely coupled system is easier to test, as the components can be tested independently without having to rely on other components. This makes it easier to identify and",
+    "pages": [
+      24,
+      250,
+      316,
+      38
+    ]
+  },
+  "(b) How are the @RestController and Controller Annotation different?": {
+    "answer": "\nThe @RestController annotation is a combination of the @Controller and @ResponseBody annotations, which is used to create REST APIs. It is used at the top of a class and can also be used at the method level to define specific mappings for different HTTP methods.\n\nOn the other hand, the @Controller annotation is used to mark a class as a controller, which is responsible for handling web requests. It can also be used in combination with @ResponseBody to return data in a specific format.\n\nIn summary, the main difference between the two is that @RestController is specifically used for creating REST APIs, while @Controller is used for handling web requests in a web application. ",
+    "pages": [
+      163,
+      105,
+      118,
+      104
+    ]
+  },
+  "21.\u2060 \u2060What is Spring Boot? Which tools are required to build an application in Spring Boot?": {
+    "answer": "1. Spring Boot is a framework developed on top of the Spring framework that eliminates boilerplate configurations required for Spring applications.\n    2. The tools required to build an application in Spring Boot are JDK 8, Spring Tool Suite (STS), Spring Initializr, and build tools like Maven and Gradle. ",
+    "pages": [
+      41,
+      21,
+      15,
+      9
+    ]
+  },
+  "22.\u2060 \u2060List out important features of Spring Boot. How to setup a Spring Boot Environment?": {
+    "answer": "1. Simplifies boilerplate code\n2. Auto-configuration\n3. Standalone applications\n4. Production-ready applications\n5. Embedded server\n6. Easy dependency management\n7. Actuator for monitoring and managing applications\n8. Spring Boot CLI for creating and testing applications\n9. Easily customizable\n10. No need for XML configurations\n11. Easy integration with other Spring projects\n12. Simplified logging\n13. Developer productivity\n14. Spring Initializr for creating projects\n15. Easy testing\n16. Improved security features\n17. Easy deployment\n18. Cloud-native support\n19. Easy conversion of existing Spring projects to Spring Boot\n20. Community support and frequent updates.\n\nTo set up a Spring Boot environment, the following tools are required:\n1. Java Development Kit (JDK) 8 or higher\n2. Spring Tool Suite (STS) or any other IDE\n3. Spring Initializr\n4. Build tools such as Maven or Gradle\n5. Apache Maven or Gradle for build automation.",
+    "pages": [
+      41,
+      21,
+      15,
+      9
+    ]
+  },
+  "23.\u2060 \u2060List out features of the 12-factor app. Explain about \"Minimal Viable Product\" release of a software.": {
+    "answer": "1. Breaking the monolithic way of developing software\n    2. Develops using microservices\n    3. Each service has a single functionality and data repository\n    4. Independent services to avoid impact on the whole application\n    5. Inter Process Communication (IPC) for communication between services\n    6. Independent testing for each service\n    7. Deploying each service independently in an isolated environment\n    8. Can share different external services\n    9. Can be deployed in different geographical locations\n    10. Strictly separate build and run stages\n    11. Stateless processes for execution\n    12. Export services via port binding\n    13. Ability to scale out via process model\n    14. Fast startup and graceful shutdown for robustness\n    15. Development, staging, and production environments should be similar.\n    16. Minimal Viable Product (MVP) release is a single release to showcase the product with basic functionality.\n    17. Helps to get feedback from users and make improvements.\n    18. Can be used to attract potential investors or customers.\n    19. MVP should be developed using agile methodology.\n    20. Should have a clear understanding of requirements and target audience.\n    21. Should be cost-effective and have a clear time-frame for",
+    "pages": [
+      41,
+      24,
+      38,
+      336
+    ]
+  },
+  "24.\u2060 \u2060What is Spring Initialize? How Spring Initialize creates a Maven Spring Boot application skeleton?": {
+    "answer": "\nSpring Initializr is a tool provided by the Spring team that allows developers to create a Maven or Gradle Spring Boot application skeleton. This tool provides a common structure and initial dependencies for the application, which can then be customized and built upon by the developer. To create a Maven Spring Boot application skeleton, developers can select the desired dependencies and project settings in Spring Initializr, and then download and import the generated project into their development environment. ",
+    "pages": [
+      42,
+      9,
+      15,
+      21
+    ]
+  },
+  "25.\u2060 \u2060What is meant by microservices? Discuss about the advantageous features of Microservices which breaks the monolithic way of developing software. State some drawbacks of using microservices.": {
+    "answer": "Microservices is an architectural design approach in which a single application is broken down into smaller, independent services that communicate with each other using web services/APIs. These services are self-contained and can be deployed and tested independently. This approach aims to create scalable, loosely coupled, and testable applications with well-defined interfaces. \n\nAdvantages of Microservices:\n1. Single Functionality and Data Repository: Each service in microservices has a single functionality and data repository, which makes it easier to understand and maintain. This also allows for better scalability as each service can be scaled independently.\n\n2. Independent Services: In a monolithic architecture, a change in one part of the application can impact the whole application. Microservices, on the other hand, are independent of each other, so a change in one service does not affect the others.\n\n3. Inter-Process Communication: Microservices communicate with each other using Inter-Process Communication (IPC) calls via web services/APIs. This allows for better data accessibility as one service can access data owned by another service.\n\n4. Independent Testing: Each service in microservices can be tested independently, unlike in a monolithic architecture where the whole application needs to be tested even if only a small part has changed. This saves time and resources.\n\n5",
+    "pages": [
+      24,
+      25,
+      22,
+      15
+    ]
+  },
+  "26.\u2060 \u2060How does a spring application get started?": {
+    "answer": "\nThe spring.application.name is specified whenever you create a Spring Boot application. The Eureka service discovery then discovers the application based on the application name.",
+    "pages": [
+      203,
+      85,
+      41,
+      120
+    ]
+  },
+  "27.\u2060 \u2060Is it possible to change the port of the embedded Tomcat server in Spring Boot? If yes then how to change it.": {
+    "answer": "\nYes, it is possible to change the port of the embedded Tomcat server in Spring Boot. This can be done by adding the following line in the `application.properties` file:\n\n```\nserver.port= <desired port number>\n```\n\nAlternatively, you can also change the port by adding the following line in the `application.yml` file:\n\n```\nserver:\n    port: <desired port number>\n```\n\nPlease note that if both `application.properties` and `application.yml` files are present, the preference will be given to `application.properties`.",
+    "pages": [
+      62,
+      85,
+      61,
+      38
+    ]
+  },
+  "28.\u2060 \u2060What is the use of the following annotations: @Autowired, @ComponentScan, @Bean": {
+    "answer": "\n    The @Autowired annotation is used to mark a constructor, field, or setter method to be autowired by Spring DI. This allows for dependency injection, which removes the dependency of a component from the source code and makes it loosely coupled. It also enables unit testing.\n\n    The @ComponentScan annotation is used to specify the packages that should be scanned for Spring components, such as beans, controllers, and services. This allows for automatic detection and registration of these components in the ApplicationContext.\n\n    The @Bean annotation is used to declare a bean within the BeanFactory. This annotation can be used on top of a method and can act as a replacement for the <bean/> element in XML configuration. It supports attributes such as initMethod, destroyMethod, and autowireCandidate. By default, the bean name is the same as the method name unless specified otherwise. ",
+    "pages": [
+      88,
+      118,
+      64,
+      17
+    ]
+  },
+  "29.\u2060 \u2060What is the difference between @RequestMapping and @GetMapping?": {
+    "answer": "\n@GetMapping is a shortcut for @RequestMapping(method = RequestMethod.GET), which means it is used specifically for GET requests. @RequestMapping is a more general annotation used for mapping HTTP requests to methods, and it can handle all types of HTTP methods. ",
+    "pages": [
+      105,
+      203,
+      163,
+      164
+    ]
+  },
+  "30.\u2060 \u2060What is an IOC container?": {
+    "answer": "\n    An IOC container is a core feature of the Spring framework. It is responsible for managing the creation and lifecycle of objects (beans) in a Spring application. The container uses dependency injection to wire together different components and manage their dependencies, making it easier to develop and maintain applications.",
+    "pages": [
+      318,
+      324,
+      317,
+      336
     ]
   }
 }

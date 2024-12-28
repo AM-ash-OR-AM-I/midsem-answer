@@ -68,14 +68,14 @@ There are various types of ex-situ conservation, including:
 ### Write different techniques used for the removal of gaseous pollutants from air
 
 There are several techniques used for the removal of gaseous pollutants from air, including:
-  1. Dilution: This technique involves dispersing the pollutants in a large volume of air, which dilutes them to acceptable levels.
-  2. Absorption: This method involves the use of a liquid or solid material to absorb the pollutants. The most commonly used absorbent is activated carbon.
-  3. Adsorption: Similar to absorption, this technique involves the use of a substance to attract and hold the pollutants. Common adsorbents include zeolites and activated alumina.
-  4. Condensation: This process involves cooling the polluted air, which causes the pollutants to condense into a liquid form and then be removed.
-  5. Oxidation: This method uses chemical reactions to convert the pollutants into less harmful substances. Ozone is commonly used for this purpose.
-  6. Filtration: This technique involves passing the polluted air through a filter, which traps the pollutants and allows clean air to pass through.
-  7. Catalytic Conversion: This process uses a catalyst to convert the pollutants into less harmful substances. This method is commonly used in catalytic converters in automobiles.
-  8. Biological Processes: Some pollutants can
+1. Dilution: This technique involves dispersing the pollutants in a large volume of air, which dilutes them to acceptable levels.
+2. Absorption: This method involves the use of a liquid or solid material to absorb the pollutants. The most commonly used absorbent is activated carbon.
+3. Adsorption: Similar to absorption, this technique involves the use of a substance to attract and hold the pollutants. Common adsorbents include zeolites and activated alumina.
+4. Condensation: This process involves cooling the polluted air, which causes the pollutants to condense into a liquid form and then be removed.
+5. Oxidation: This method uses chemical reactions to convert the pollutants into less harmful substances. Ozone is commonly used for this purpose.
+6. Filtration: This technique involves passing the polluted air through a filter, which traps the pollutants and allows clean air to pass through.
+7. Catalytic Conversion: This process uses a catalyst to convert the pollutants into less harmful substances. This method is commonly used in catalytic converters in automobiles.
+8. Biological Processes: Some pollutants can
 
 - Source: [66, 72, 142, 193]
 
