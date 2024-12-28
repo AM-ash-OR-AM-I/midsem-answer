@@ -202,12 +202,15 @@ You can create a Spring Boot application by using the Spring Initializr tool pro
 
 To connect a Spring Boot Applicaiton to a database, you can use Spring Data JPA and configure the necessary settings in the application.properties file. For example, if we have an entity class called "User" and a repository interface called "UserRepository", we can configure the database connection in the application.properties file as follows:
 
+```
 spring.datasource.url=jdbc:mysql://localhost:3306/mydatabase
 spring.datasource.username=username
 spring.datasource.password=password
+```
 
 In the User entity class, we can specify the table name and column names with the @Table and @Column annotations. For example:
 
+```java
 @Entity
 @Table(name = "users")
 public class User {
@@ -224,14 +227,17 @@ public class User {
 
   //getters and setters
 }
+```
 
 In the UserRepository interface, we can define methods for interacting with the database using Spring Data JPA's query methods. For example:
 
+```java
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
   User findByUsername(String username);
   List<User> findByEmailContaining(String keyword);
 }
+```
 
 This way, we can connect our Spring Boot application to a database and perform CRUD operations on the
 
