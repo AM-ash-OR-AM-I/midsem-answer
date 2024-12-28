@@ -390,28 +390,24 @@ To set up a Spring Boot environment, the following tools are required:
  - Source: [41, 21, 15, 9]
 
 
-### 23.⁠ ⁠List out features of the 12-factor app. Explain about "Minimal Viable Product" release of a software.
-1. Breaking the monolithic way of developing software
-2. Develops using microservices
-3. Each service has a single functionality and data repository
-4. Independent services to avoid impact on the whole application
-5. Inter Process Communication (IPC) for communication between services
-6. Independent testing for each service
-7. Deploying each service independently in an isolated environment
-8. Can share different external services
-9. Can be deployed in different geographical locations
-10. Strictly separate build and run stages
-11. Stateless processes for execution
-12. Export services via port binding
-13. Ability to scale out via process model
-14. Fast startup and graceful shutdown for robustness
-15. Development, staging, and production environments should be similar.
-16. Minimal Viable Product (MVP) release is a single release to showcase the product with basic functionality.
-17. Helps to get feedback from users and make improvements.
-18. Can be used to attract potential investors or customers.
-19. MVP should be developed using agile methodology.
-20. Should have a clear understanding of requirements and target audience.
-21. Should be cost-effective and have a clear time-frame for
+### 23.⁠ ⁠List out features of the 12-factor app. Explain about "Minimal Viable Product" release of a software. (Wrongs)
+TL;DR
+Refer: https://12factor.net
+
+(fixed manually gave wrong ans)
+- Codebase: One codebase tracked in revision control, many deploys
+- Dependencies: Explicitly declare and isolate dependencies
+- Config: Store config in the environment
+- Backing services: Treat backing services as attached resources
+- Build, release, run: Strictly separate build and run stages
+- Processes: Execute the app as one or more stateless processes
+- Port binding: Export services via port binding
+- Concurrency: Scale out via the process model
+- Disposability: Maximize robustness with fast startup and graceful shutdown
+- Dev/prod parity: Keep development, staging, and production as similar as possible
+- Logs: Treat logs as event streams
+- Admin processes: Run admin/management tasks as one-off processes
+
  - Source: [41, 24, 38, 336]
 
 
