@@ -51,7 +51,7 @@ answers_dict = read_answers(file_name=file_name)
 def main():
     load_dotenv()
 
-    with open("ems_queries.txt", "r") as f:
+    with open("ems_queries2.txt", "r") as f:
         queries = f.readlines()
         queries = [query.strip() for query in queries]
 

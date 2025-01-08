@@ -1,3 +1,5 @@
+# Answers to Environmental Studies Questions
+## Assignment
 ### Define ecosystem, write the structure and function of ecosystem
 
 An ecosystem is a region with a specific and recognizable landscape form such as forest, grassland, desert, wetland or coastal area. It is a community of plants and animals that interact with each other and their non-living environment, such as soil, air, and water. Ecosystems are divided into terrestrial or land-based ecosystems, and aquatic ecosystems in water.
@@ -94,3 +96,5 @@ The diagram below illustrates the process of eutrophication:
 [Diagram of eutrophication]
 
 - Source: [137, 188, 90, 136]
+
+## PYQs
