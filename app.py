@@ -55,13 +55,14 @@ def main():
 
     # upload file
     pdf = st.file_uploader("Upload your PDF", type="pdf")
-
     # extract the text
     if pdf is not None:
         with tempfile.NamedTemporaryFile(delete=False) as f:
             f.write(pdf.read())
+            print("Re-writing the file")
             file_name = f.name
 
+        page_offset = get_offset_by_name(pdf.name)
         loader = PyPDFLoader(file_name)
         data = loader.load()
 
@@ -75,6 +76,7 @@ def main():
     Follow the instructions below to answer the question:
     - Use the following pieces of context inside triple quotes to answer the question
     - Question will be outside the triple quotes
+    - Answer in brief between 70-150 words
 
     '''{context}'''
 
@@ -88,7 +90,7 @@ def main():
             docs = knowledge_base.similarity_search(user_question)
             for doc in docs:
                 doc.page_content = doc.page_content.encode("utf-8", "replace").decode()
-            print(docs)
+            # print(docs)
             llm = OpenAI()
             chain = load_qa_chain(llm, chain_type="stuff", prompt=prompt)
             with get_openai_callback() as cb:
@@ -102,9 +104,7 @@ def main():
             details = defaultdict()
             details["answer"] = response
             details["pages"] = [
-                int(doc.metadata.get("page"))
-                + (-36 if file_name == "DM_answers.json" else 1)
-                for doc in docs
+                int(doc.metadata.get("page")) + page_offset for doc in docs
             ]
             print(details)
             response = response.replace("\n", "\n\n")
@@ -118,6 +118,20 @@ def main():
                 file_name=filename,
             )
             convert_json_to_md(file_name=filename)
+
+
+def get_offset_by_name(name):
+    if "information retrieval" in name:
+        page_offset = -23
+    elif "Datamining" in name:
+        page_offset = -36
+    elif "DWT" in name:
+        page_offset = -12
+    elif "Machine Learning" in name:
+        page_offset = 1
+    else:
+        page_offset = 1
+    return page_offset
 
 
 if __name__ == "__main__":

@@ -1,0 +1,29 @@
+1. Write the scope and importance of Environmental Study. 
+2. Discuss vertical structure of atmosphere and significance of each layer with suitable diagram.
+3. Write the structure (components) and function of ecosystem.
+4. Differentiate the food chain and food web. Write the types of food chain with example.
+5. Define biogeocycle and discuss nitrogen cycle with suitable schematic diagram.
+6. What is ecological succession, Discuss the principle of ecological succession with a suitable diagram?
+7. What is biodiversity, Discuss various types of biodiversity 
+8. What do you understand by hot spot biodiversity? Briefly discuss the hot spot biodiversity of India.
+9. Justify India is a mega biodiversity nation in the world. 
+10. Define Insitu and Ex-Situ conservation of Biodiversity and give example from each category.
+11. What are the types of renewable energy sources and briefly discuss the working principle of solar and tidal energy generation.
+12. What is decibel? Write the major noise reduction technique. 
+13. What will be the sound power level combining the four sound levels of 56, 68, 71, and 48 dB.
+14. Discuss municipal solid waste management technique with a suitable schematic diagram
+15. Compute the landfill area requirement for 20 years for a city of population about 6 Lakh. (Assume MSW generation as 500 gm per capita per day; MSW density as 500 kg/m3; Height of dump as 15 m).
+16. Discuss the major causes of ozone depletion with suitable chemical reaction.
+17. Define sustainable development; discuss various strategies of rainwater harvesting and watershed management.
+18. What do you mean by Green House Effect? Write the adverse effect of global warming on human health and environment.
+19. Enlist 4 important environmental laws and their objectives. 
+20. What is EIA? Discuss the EIA approval process of a newly proposed project with a schematic diagram.
+21. Define disaster as per WHO, Explain integrated disaster management with a suitable schematic diagram
+22. Discuss major flood management approach in India. 
+23. Define disaster as per WHO, and write various causes of floods disaster 
+24. Define and Classify cyclone. Discuss major causes and mechanism of cyclone formation
+25. Write the recovery and restoration activities for cyclone disaster 
+26. Classify earthquake, Discuss the major causes of earthquake. 
+27. Write the common preparedness and mitigation measures for Earthquake disaster.
+28. Differentiate nuclear fission and fusion, and write the major reason for Chernobyl Accident
+29. Explain the major strategies to control fission chain reaction in nuclear reactor, and write the major reason for Chernobyl Accident

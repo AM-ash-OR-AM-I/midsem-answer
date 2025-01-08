@@ -43,15 +43,15 @@ def convert_json_to_md(file_name):
         f.writelines(lines)
 
 
-load_file_name = "BOOK - Shagun Bakliwal - Hands-on Application Development using Spring Boot_ Building Modern Cloud Native Applications by Learning RESTFul API, Microservices, CRUD Operations, Unit Testing, and Deployment (4).pdf"
-file_name = "answers.json"
+load_file_name = "/Users/ashutosh/Desktop/SEMESTER 7/EMS/Environmental Studies.pdf"
+file_name = "ems_endsems.json"
 answers_dict = read_answers(file_name=file_name)
 
 
 def main():
     load_dotenv()
 
-    with open("queries.txt", "r") as f:
+    with open("ems_queries.txt", "r") as f:
         queries = f.readlines()
         queries = [query.strip() for query in queries]
 
@@ -92,7 +92,7 @@ def main():
                 )
                 print(cb)
 
-            filename = "answers.json"
+            filename = "ems_endsems.json"
             answers_dict = read_answers(file_name=filename)
             details = defaultdict()
             details["answer"] = response
@@ -101,7 +101,7 @@ def main():
                 + (-36 if file_name == "DM_answers.json" else 1)
                 for doc in docs
             ]
-            print(details)
+            # print(details)
             response = response.replace("\n", "\n\n")
             response += "\n\n"
             response += f" - Source: {details['pages']}\n\n\n"
