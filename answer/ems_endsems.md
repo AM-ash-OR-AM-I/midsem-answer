@@ -3,25 +3,19 @@
 ## Assignment
 
 ### 1. Write the scope and importance of Environmental Study
+
 ## Scope  
-- **Multidisciplinary Field**  
-  - Includes biology, geology, chemistry, physics, engineering, sociology, health, anthropology, economics, statistics, computers, and philosophy.  
-- **Focus**  
-  - Addresses issues affecting organisms and sustainable solutions for finite resources.  
-- **Key Areas**  
-  - Studies natural landscapes, human activities' impact, and interdependence with the environment.  
+- **Multidisciplinary**: Includes biology, geology, chemistry, physics, engineering, sociology, health, anthropology, economics, statistics, computers, and philosophy.  
+- **Focus**: Addresses issues affecting organisms and sustainable solutions for finite resources.  
+- **Key Areas**: Studies natural landscapes, human activities' impact, and interdependence with the environment.  
 
 ## Importance  
-- **Future of Humanity**  
-  - Crucial for ecological security and addressing environmental degradation.  
-- **Environmental Issues**  
-  - Tackles pollution, deforestation, waste disposal, and global warming.  
-- **Disaster Management**  
-  - Helps prevent disasters and manage environmental hazards.  
-- **Global Relevance**  
-  - Essential for sustainable development and biodiversity conservation.  
-- **India’s Context**  
-  - Vital for protecting the nation’s rich biodiversity and resources.  
+- **Future of Humanity**: Crucial for ecological security and addressing environmental degradation.  
+- **Environmental Issues**: Tackles pollution, deforestation, waste disposal, and global warming.  
+- **Disaster Management**: Helps prevent disasters and manage environmental hazards.  
+- **Global Relevance**: Essential for sustainable development and biodiversity conservation.  
+- **India’s Context**: Vital for protecting the nation’s rich biodiversity and resources.  
+
 
 
 - Source: [30, 32, 16, 34]
