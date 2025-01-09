@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/5b17efc4-567f-4487-b5df-125d048dcf06)# Environmental Studies
-
 ## Assignment
 
 ### 1. Write the scope and importance of Environmental Study
@@ -108,7 +106,7 @@ As the ecosystem progresses, the community moves towards a series of changes kno
 ### 7. What is biodiversity, Discuss various types of biodiversity
 
 Biodiversity refers to the variety of life forms on Earth, including plants, animals, fungi, and microorganisms, and the ecosystems they form. It encompasses genetic, species, and ecosystem diversity.
-# Types of Biodiversity  
+### Types of Biodiversity  
 1. **Genetic Diversity**: Differences in genes within a species, vital for adaptation and survival.  
 2. **Species Diversity**: Variety of species in a region, essential for ecosystem health.  
 3. **Ecosystem Diversity**: Variety of habitats and ecological processes, key for ecological balance.  
