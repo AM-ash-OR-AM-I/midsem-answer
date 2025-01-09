@@ -73,7 +73,7 @@ Types of food chains include:
 
 3. Parasitic food chain: This type of food chain starts with a parasite as producer, then the host as primary consumer, and finally predators as secondary and tertiary consumers. Example: Flea → Dog → Wolf.
 
-4. Saprophytic food chain: This type of food
+4. Saprophytic food chain:  This type of food chain starts with dead organic matter being broken down by saprophytes (like fungi and bacteria) as primary consumers, which are then consumed by detritivores and ultimately by predators as secondary and tertiary consumers. Example: Dead wood → Fungi → Insect → Bird.
 
 - Source: [349, 90, 351, 347]
 
