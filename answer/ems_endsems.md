@@ -1,4 +1,4 @@
-# Environmental Studies
+![image](https://github.com/user-attachments/assets/5b17efc4-567f-4487-b5df-125d048dcf06)# Environmental Studies
 
 ## Assignment
 
@@ -107,16 +107,11 @@ As the ecosystem progresses, the community moves towards a series of changes kno
 
 ### 7. What is biodiversity, Discuss various types of biodiversity
 
-Biodiversity is the degree of nature's variety in the biosphere. It refers to the variety of living organisms, their genetic diversity, and the variety of ecosystems in which they live. Biodiversity can be observed at three levels: genetic variability within a species, the variety of species within a community, and the organization of species in an area into distinctive plant and animal communities, known as ecosystem diversity.
-
-1. Genetic Diversity:
-Genetic diversity refers to the differences in genes among individuals of a species. This diversity is essential for the health and survival of a species. It allows for adaptation to changing environmental conditions and helps maintain a diverse gene pool. Loss of genetic diversity can lead to inbreeding and eventually, extinction of a species.
-
-2. Species Diversity:
-Species diversity is the number and variety of species present in a particular region or ecosystem. It includes both wild and domesticated species. Some areas are more rich in species than others, and the diversity of species is essential for maintaining a healthy ecosystem. Loss of species diversity can have a cascading effect on the entire ecosystem.
-
-3. Ecosystem Diversity:
-Ecosystem diversity refers to the variety of habitats, communities, and ecological processes in an area. It includes different types of forests, grasslands, wetlands
+Biodiversity refers to the variety of life forms on Earth, including plants, animals, fungi, and microorganisms, and the ecosystems they form. It encompasses genetic, species, and ecosystem diversity.
+# Types of Biodiversity  
+1. **Genetic Diversity**: Differences in genes within a species, vital for adaptation and survival.  
+2. **Species Diversity**: Variety of species in a region, essential for ecosystem health.  
+3. **Ecosystem Diversity**: Variety of habitats and ecological processes, key for ecological balance.  
 
 - Source: [109, 108, 111, 117]
 
